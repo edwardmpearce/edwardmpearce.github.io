@@ -1,0 +1,1 @@
+Personal website of [Edward Pearce](https://edwardmpearce.github.io)
