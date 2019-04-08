@@ -1,20 +1,18 @@
-# Clean and don't fail
+# Clean and don't fail, then download and install Hugo version 0.55.0
 install:
   - rm -rf public || exit 0
+  - wget -O /tmp/hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.55.0/hugo_0.55.0_Linux-64bit.deb
+  - sudo dpkg -i /tmp/hugo.deb
 
-# Build the website
+# Build the website using Hugo
 script:
-  - ./binaries/hugo
+  - hugo
 
 branches:
   only:
     - source
 
 # Deploy to GitHub pages
-#deploy:
-#  edge:
-#    branch: v1.8.47
-
 deploy:
   provider: pages
   skip_cleanup: true
