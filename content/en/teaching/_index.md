@@ -11,18 +11,40 @@ draft = false  # Is this a draft? true/false
 
 Current (Sheffield):
 
-- MAS111 Core Mathematics
-- MAS114 Numbers and Groups
-- MAS156 Mathematics for Engineering Students
+- [MAS111] Mathematics Core II
+- [MAS114] Numbers and Groups
+- [MAS156] Mathematics for Engineering Students
 
 Past (Sheffield):
 
-- MAS110 Core Mathematics
-- MAS222 Differential Equations
-- MAS
+- [MAS110] Mathematics Core I
+- [MAS221] Analysis
+- [MAS222] Differential Equations
+- [MAS6002] Statistical Laboratory - MSc Introductory Computing (R)
+
+[MAS110]: http://maths.dept.shef.ac.uk/maths/module_info_2020.html
+[MAS111]: http://maths.dept.shef.ac.uk/maths/module_info_2024.html
+[MAS114]: http://maths.dept.shef.ac.uk/maths/module_info_2036.html
+[MAS156]: https://maths.dept.shef.ac.uk/maths/module_info_2060.html
+[MAS221]: http://maths.dept.shef.ac.uk/maths/module_info_2100.html
+[MAS222]: http://maths.dept.shef.ac.uk/maths/module_info_2104.html
+[MAS6002]: http://maths.dept.shef.ac.uk/maths/module_info_2019.html
 
 Past (Warwick):
 
 Responsible for supervising two groups of first year mathematics undergraduates, five students per group, two sessions per group per week plus marking.
 Modules covered:
 
+- [MA132] Foundations
+- [MA133] Differential Equations
+- [MA136] Introduction to Abstract Algebra
+- [MA131] Analysis I and II
+- [MA106] Linear Algebra
+- [MA134] Geometry and Motion
+
+[MA132]: https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year1/ma132/
+[MA133]: https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year1/ma133/
+[MA136]: https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year1/ma136/
+[MA131]: https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year1/ma131/
+[MA106]: https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year1/ma106/
+[MA134]: https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year1/ma134/
