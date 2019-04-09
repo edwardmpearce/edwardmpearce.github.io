@@ -1,5 +1,5 @@
 +++
-title = "Teaching"
+title = "教学"
 summary = "My teaching responsibilities"
 
 date = 2019-03-27T00:00:00
@@ -9,20 +9,42 @@ draft = false  # Is this a draft? true/false
 
 +++
 
-Current (Sheffield):
+Current (谢菲尔德大学):
 
-- MAS111 Core Mathematics
-- MAS114 Numbers and Groups
-- MAS156 Mathematics for Engineering Students
+- [MAS111] 数学基础2
+- [MAS114] 数和群
+- [MAS156] 工程师的数学
 
-Past (Sheffield):
+Past (谢菲尔德大学):
 
-- MAS110 Core Mathematics
-- MAS222 Differential Equations
-- MAS
+- [MAS110] 数学基础1
+- [MAS221] 数学分析
+- [MAS222] 微分方程
+- [MAS6002] Statistical Laboratory - MSc Introductory Computing (R)
 
-Past (Warwick):
+[MAS110]: http://maths.dept.shef.ac.uk/maths/module_info_2020.html
+[MAS111]: http://maths.dept.shef.ac.uk/maths/module_info_2024.html
+[MAS114]: http://maths.dept.shef.ac.uk/maths/module_info_2036.html
+[MAS156]: https://maths.dept.shef.ac.uk/maths/module_info_2060.html
+[MAS221]: http://maths.dept.shef.ac.uk/maths/module_info_2100.html
+[MAS222]: http://maths.dept.shef.ac.uk/maths/module_info_2104.html
+[MAS6002]: http://maths.dept.shef.ac.uk/maths/module_info_2019.html
+
+Past (华威大学):
 
 Responsible for supervising two groups of first year mathematics undergraduates, five students per group, two sessions per group per week plus marking.
 Modules covered:
 
+- [MA132] 数学基础
+- [MA133] 微分方程
+- [MA136] 抽象代数的介绍
+- [MA131] 数学分析1和2
+- [MA106] 线性代数
+- [MA134] Geometry and Motion
+
+[MA132]: https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year1/ma132/
+[MA133]: https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year1/ma133/
+[MA136]: https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year1/ma136/
+[MA131]: https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year1/ma131/
+[MA106]: https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year1/ma106/
+[MA134]: https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year1/ma134/
