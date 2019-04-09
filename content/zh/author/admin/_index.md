@@ -9,7 +9,7 @@ authors = ["admin"]
 superuser = true
 
 # Role/position
-role = "博士生"
+role = "博士在读"
 
 # Organizations/Affiliations
 #   Separate multiple entries with a comma, using the form: `[ {name="Org1", url=""}, {name="Org2", url=""} ]`.
@@ -34,12 +34,12 @@ interests = [
 
 # List qualifications (such as academic degrees)
 [[education.courses]]
-  course = "（未）博士，数学"
+  course = "博士（在读），数学"
   institution = "谢菲尔德大学"
   year = 2020
 
 [[education.courses]]
-  course = "数学硕士 (MMath)"
+  course = "数学本硕连读 (MMath)"
   institution = "华威大学"
   year = 2016
 
