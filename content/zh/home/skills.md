@@ -15,19 +15,19 @@ subtitle = ""
 [[feature]]
   icon = "chalkboard-teacher"
   icon_pack = "fas"
-  name = "课程老师"
-  description = "I am a teacher and a communicator, explaining technical concepts to students of all backgrounds and ages. I have given lectures and seminars, and led tutorials and coding sessions, both professionally and as a volunteer."
+  name = "教学经验"
+  description = "我在高校研究自己课题的同时，也承担了对本科生的教学工作。我以授课、领导研讨会等形式向来自不同学院的学生们传授数学相关的理论知识以及实用编程。"
 
 [[feature]]
   icon = "python"
   icon_pack = "fab"
-  name = "Python 使用者"
+  name = "Python"
   description = "I am proficient in Python and key packages which form the basis of the data scientist's toolkit (pandas, scikit-learn, Tensorflow). I have completed projects involving web scraping, data analysis and interfacing with SQL and mongoDB."
   
 [[feature]]
   icon = "laptop-code"
   icon_pack = "fas"
-  name = "程序员"
+  name = "电脑软件"
   description = "I solve problems using software tools, including version control (git), web development, database management, numerical programming (Matlab, Sage), and cloud computing (Collab, CoCalc)."
   
 #[[feature]]
