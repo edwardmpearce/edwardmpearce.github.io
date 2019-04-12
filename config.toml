@@ -397,5 +397,5 @@ preserveTaxonomyNames = true
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
     [[languages.zh.menus.main]]
       name = "简历"
-      url = "../files/cv20190116.pdf"
+      url = "../files/cv20190412.pdf"
       weight = 70 

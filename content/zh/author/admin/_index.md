@@ -73,7 +73,7 @@ interests = [
 [[social]]
    icon = "cv"
    icon_pack = "ai"
-   link = "../files/cv20190116.pdf"
+   link = "../files/cv20190412.pdf"
 
 +++
 
