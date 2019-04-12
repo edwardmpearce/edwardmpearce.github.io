@@ -25,7 +25,7 @@ date_format = "Jan 2006"
   date_start = "2016-10-01"
   date_end = ""
   description = """
-  Taking charge of independent study and conducting research in mathematics as well as teaching undergraduates, whilst at the same time developing my own interests in Chinese language and culture. 
+  Taking charge of independent study and conducting research in mathematics as well as teaching foundational mathematics and programming skills to undergraduates, master's students, and the general public, whilst at the same time developing my own interests in Chinese language and culture, data science and machine learning, and web development through evening classes, extracurricular reading, and personal projects. 
   """
 
 [[experience]]
