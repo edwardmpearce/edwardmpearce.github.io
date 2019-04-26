@@ -11,6 +11,8 @@ draft = false  # Is this a draft? true/false
 
 Current (谢菲尔德大学):
 
+Responsible for leading tutorials for classes of up to 40 students, marking weekly homework assignments, administering and marking in-class quizzes. Average weekly workload: Lead Demonstrator - 2 hours, Assistant demonstrator - 1.5 hours, Marking - 1.5 hours.
+
 - [MAS111] 数学基础2
 - [MAS114] 数和群
 - [MAS156] 工程师的数学
@@ -20,7 +22,7 @@ Past (谢菲尔德大学):
 - [MAS110] 数学基础1
 - [MAS221] 数学分析
 - [MAS222] 微分方程
-- [MAS6002] Statistical Laboratory - MSc Introductory Computing (R)
+- [MAS6002] Statistical Laboratory - MSc Introductory Computing using R
 
 [MAS110]: http://maths.dept.shef.ac.uk/maths/module_info_2020.html
 [MAS111]: http://maths.dept.shef.ac.uk/maths/module_info_2024.html
@@ -48,3 +50,9 @@ Modules covered:
 [MA131]: https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year1/ma131/
 [MA106]: https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year1/ma106/
 [MA134]: https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year1/ma134/
+
+## Private tutoring
+
+I am available for hire as a private tutor for mathematical and scientific topics up to degree level. Please [contact]({{< ref "/#contact" >}}) me to make an inquiry.
+
+I have previously tutored on mathematics at the levels between GCSE, A Level, and degree level, most recently for a 2nd year engineering student, as well as participating in outreach and voluntary activities at primary and secondary levels. I have also provided proofreading services for essays and dissertations to masters students.
