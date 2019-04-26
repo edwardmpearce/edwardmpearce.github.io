@@ -307,10 +307,10 @@ preserveTaxonomyNames = true
   url = "/teaching/"
   weight = 7
 
-#  [[menus.main]]
-#  name = "Publications"
-#  url = "#featured"
-#  weight = 40
+  [[menus.main]]
+  name = "Research"
+  url = "/research/"
+  weight = 40
 
 #  [[menus.main]]
 #  name = "Tutorials"
@@ -378,10 +378,10 @@ preserveTaxonomyNames = true
       url = "/teaching/"
       weight = 3
 
-#    [[languages.zh.menus.main]]
-#      name = "笔记"
-#      url = "/notes/"
-#      weight = 4
+    [[languages.zh.menus.main]]
+      name = "研究"
+      url = "/research/"
+      weight = 4
 
 #    [[languages.zh.menus.main]]
 #      name = "博客"
