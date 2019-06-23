@@ -3,7 +3,7 @@ title = "活动"  # Add a page title.
 summary = "我的活动"  # Add a page description.
 
 date = 2019-03-29T00:00:00  # Add today's date.
-# lastmod = 2019-03-29T00:00:00
+# lastmod = 2019-06-23T18:00:00
 
 draft = false  # Is this a draft? true/false
 
@@ -22,6 +22,8 @@ draft = false  # Is this a draft? true/false
 
 ## 学术会议
 
+- [EA Global](https://www.eaglobal.org/events/sf2019/): San Francisco 2019, (21-23 June 2019)
+- Innovate UK Knowledge Transfer Network First AI in Health & Care [Study Group](https://ktn-uk.co.uk/news/from-acne-to-malaria-can-industrial-maths-be-applied-to-health-challenges-and-provide-new-solutions) with Industry, (Cardiff, 22-24 May 2019)
 - 4th British Algebraic Geometry [Meeting](https://www.bragmeeting.uk/), (Cambridge, 24-26 September 2017)
 - HPC@Sheffield 2019 [workshop](https://www.sheffield.ac.uk/cics/hpc-sheffield), (8th April 2019)
 - Geometry and Mathematical Physics [Workshop](https://sites.google.com/site/gmplboro/gmp2019), (Loughborough, 27-30 March 2019)
