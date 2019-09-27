@@ -107,7 +107,7 @@ I feel that you'll get more mileage out of this app as you Chinese language leve
 Nowadays, instead of learning curated content from language apps, I use the website [Line Dictionary](http://www.nciku.com/) (which also has an associated [app][LineDictionary] which I haven't tried) to look up new vocabulary that I encounter in my travels, 
 whilst a number of people I know use [Pleco] as a dictionary app for learning Chinese, making it also worth looking into. 
 
-I recently came across an online discussion of Chinese language apps where a user recommended [HK Chinese Lexical List] (香港小學習字表) for learning to write in Chinese (Simplified and Traditional). 
+I recently came across an online discussion of Chinese language apps where a user recommended 香港小學習字表 [HK Chinese Lexical List] for learning to write in Chinese (Simplified and Traditional). 
 They said "It's designed for kids, but anyone can use it to learn how to use the correct principles to write Chinese (筆劃), and the pronouncation section in both Mandarin and Cantonese is useful."
 
 A [review][HK Chinese Lexical List review] of the app in Google Play store says: "Faithfully replicates the Hong Kong Education Bureau's Chinese Lexical Lists for Primary Learning [Website](https://www.edbchinese.hk/lexlist/)."
