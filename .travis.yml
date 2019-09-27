@@ -1,7 +1,7 @@
-# Clean and don't fail, then download and install Hugo version 0.55.0
+# Clean and don't fail, then download and install Hugo-extended version 0.58.3
 install:
   - rm -rf public || exit 0
-  - wget -O /tmp/hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.55.0/hugo_0.55.0_Linux-64bit.deb
+  - wget -O /tmp/hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.58.3/hugo_extended_0.58.3_Linux-64bit.deb
   - sudo dpkg -i /tmp/hugo.deb
 
 # Build the website using Hugo
