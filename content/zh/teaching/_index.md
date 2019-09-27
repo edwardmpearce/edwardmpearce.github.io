@@ -2,8 +2,8 @@
 title = "教学"
 summary = "My teaching responsibilities"
 
-date = 2019-03-27T00:00:00
-# lastmod = 2019-03-27T00:00:00
+date = 2019-09-27T00:00:00
+lastmod = 2019-09-27T00:00:00
 
 draft = false  # Is this a draft? true/false
 
@@ -11,26 +11,30 @@ draft = false  # Is this a draft? true/false
 
 Current (谢菲尔德大学):
 
-Responsible for leading tutorials for classes of up to 40 students, marking weekly homework assignments, administering and marking in-class quizzes. Average weekly workload: Lead Demonstrator - 2 hours, Assistant demonstrator - 1.5 hours, Marking - 1.5 hours.
+Responsible for leading tutorials for classes of up to 40 students, marking weekly homework assignments, administering and marking in-class quizzes. Average weekly workload: Lead Demonstrator - 3 hours, Assistant demonstrator - 2 hours, Marking - 2 hours.
 
-- [MAS111] 数学基础2
 - [MAS114] 数和群
-- [MAS156] 工程师的数学
+- [MAS115] Mathematical Investigation Skills
+- [MAS151] 工程师的数学
+- [MAS212] Scientific Computation and Simulation
 
 Past (谢菲尔德大学):
 
 - [MAS110] 数学基础1
+- [MAS111] 数学基础2
 - [MAS221] 数学分析
 - [MAS222] 微分方程
-- [MAS6002] Statistical Laboratory - MSc Introductory Computing using R
+- [MAS6002] 统计实验室 - MSc Introductory Computing using R
 
-[MAS110]: http://maths.dept.shef.ac.uk/maths/module_info_2020.html
-[MAS111]: http://maths.dept.shef.ac.uk/maths/module_info_2024.html
-[MAS114]: http://maths.dept.shef.ac.uk/maths/module_info_2036.html
+[MAS110]: https://maths.dept.shef.ac.uk/maths/module_info_2020.html
+[MAS111]: https://maths.dept.shef.ac.uk/maths/module_info_2024.html
+[MAS114]: https://maths.dept.shef.ac.uk/maths/module_info_2036.html
+[MAS115]: https://maths.dept.shef.ac.uk/maths/module_info_2178.html
 [MAS156]: https://maths.dept.shef.ac.uk/maths/module_info_2060.html
-[MAS221]: http://maths.dept.shef.ac.uk/maths/module_info_2100.html
-[MAS222]: http://maths.dept.shef.ac.uk/maths/module_info_2104.html
-[MAS6002]: http://maths.dept.shef.ac.uk/maths/module_info_2019.html
+[MAS212]: https://maths.dept.shef.ac.uk/maths/module_info_2218.html
+[MAS221]: https://maths.dept.shef.ac.uk/maths/module_info_2100.html
+[MAS222]: https://maths.dept.shef.ac.uk/maths/module_info_2104.html
+[MAS6002]: https://maths.dept.shef.ac.uk/maths/module_info_2019.html
 
 Past (华威大学):
 
