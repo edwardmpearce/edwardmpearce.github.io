@@ -25,7 +25,7 @@ email = ""
 interests = [
   "Mathematics and its Applications",
   "Machine Learning and Statistics",
-  "Bayesian Generative Models"
+  "Data science and visualization"
 ]
 
 # Organizational groups that you belong to (for People widget)
