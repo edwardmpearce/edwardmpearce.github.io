@@ -297,10 +297,10 @@ preserveTaxonomyNames = true
 #  url = "#projects"
 #  weight = 5
 
-#  [[menus.main]]
-#  name = "Blog"
-#  url = "#posts"
-#  weight = 6
+  [[menus.main]]
+  name = "Posts"
+  url = "/post/"
+  weight = 6
   
   [[menus.main]]
   name = "Teaching"
@@ -383,10 +383,10 @@ preserveTaxonomyNames = true
       url = "/research/"
       weight = 4
 
-#    [[languages.zh.menus.main]]
-#      name = "博客"
-#      url = "#posts"
-#      weight = 5
+    [[languages.zh.menus.main]]
+      name = "博客"
+      url = "/post/"
+      weight = 5
 
     [[languages.zh.menus.main]]
       name = "联系方式"
