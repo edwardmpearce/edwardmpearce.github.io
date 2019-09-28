@@ -1,9 +1,9 @@
 +++
-title = "Miscellaneous"
-summary = "Miscellaneous educational resources"
+title = "Norms in the real plane"
+summary = "Unit circle drawing tool"
 
 date = 2019-07-11T00:00:00
-# lastmod = 2019-07-11T00:00:00
+lastmod = 2019-09-28T00:00:00
 
 draft = false  # Is this a draft? true/false
 
@@ -11,8 +11,8 @@ draft = false  # Is this a draft? true/false
 
 ![Picture](https://upload.wikimedia.org/wikipedia/commons/e/e6/Minkowski3.png)
 
-Below is an interactive tool to draw the $l_{p}$-norm unit circle in $\mathbb{R}^2$ for a given value of $p$, inspired by the above [picture](https://commons.wikimedia.org/wiki/File:Minkowski3.png) from Wikipedia. All you need to do is set the value of $p$ you want in the box and then click the button to evaluate.
-
+Below is an interactive tool to draw the $l_{p}$-norm unit circle in $\mathbb{R}^2$ for a given value of $p\ge0$, inspired by the above [picture](https://commons.wikimedia.org/wiki/File:Minkowski3.png) from Wikipedia. 
+To draw the set $\\{(x,y)\in\mathbb{R}^{2}:|x|^{p} + |y|^{p} = 1\\}$ all you need to do is set the value of $p\ge0$ you want in the box and then click the button to evaluate.
 <!-- Embed SageMath cells in your webpages -->
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
 <script>sagecell.makeSagecell({"inputLocation": ".sage"});</script>
