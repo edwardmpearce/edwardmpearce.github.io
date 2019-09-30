@@ -18,30 +18,30 @@
 # url = "/talk/"
 # weight = 3  
 
-# [[main]]
-# name = "Notes"
-# url = "/notes/"
-# weight = 4
-
 #  [[main]]
 #  name = "Projects"
 #  url = "#projects"
-#  weight = 5
+#  weight = 4
 
 [[main]]
   name = "Posts"
   url = "/post/"
-  weight = 6
+  weight = 5
 
 [[main]]
   name = "Teaching"
   url = "/teaching/"
-  weight = 7
+  weight = 6
 
 [[main]]
   name = "Research"
   url = "/research/"
-  weight = 40
+  weight = 7
+  
+[[main]]
+name = "Notes"
+url = "/notes/"
+weight = 8
 
 [[main]]
   name = "Contact"
