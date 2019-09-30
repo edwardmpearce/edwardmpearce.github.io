@@ -15,13 +15,14 @@ Responsible for leading tutorials for classes of up to 40 students, marking week
 
 - [MAS114] Numbers and Groups
 - [MAS115] Mathematical Investigation Skills
-- [MAS151] Mathematics for Engineering Students
+- [MAS151] Mathematics for Civil Engineering Students
 - [MAS212] Scientific Computation and Simulation
 
 Past (Sheffield):
 
 - [MAS110] Mathematics Core I
 - [MAS111] Mathematics Core II
+- [MAS156] Mathematics for Electrical and Aerospace Engineering Students
 - [MAS221] Analysis
 - [MAS222] Differential Equations
 - [MAS6002] Statistical Laboratory - MSc Introductory Computing using R
@@ -30,7 +31,8 @@ Past (Sheffield):
 [MAS111]: https://maths.dept.shef.ac.uk/maths/module_info_2024.html
 [MAS114]: https://maths.dept.shef.ac.uk/maths/module_info_2036.html
 [MAS115]: https://maths.dept.shef.ac.uk/maths/module_info_2178.html
-[MAS156]: https://maths.dept.shef.ac.uk/maths/module_info_2060.html
+[MAS151]: http://engmaths.group.shef.ac.uk/mas151/
+[MAS156]: http://engmaths.group.shef.ac.uk/mas156/
 [MAS212]: https://maths.dept.shef.ac.uk/maths/module_info_2218.html
 [MAS221]: https://maths.dept.shef.ac.uk/maths/module_info_2100.html
 [MAS222]: https://maths.dept.shef.ac.uk/maths/module_info_2104.html

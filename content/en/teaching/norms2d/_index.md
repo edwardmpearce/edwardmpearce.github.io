@@ -13,6 +13,7 @@ draft = false  # Is this a draft? true/false
 
 Below is an interactive tool to draw the $l_{p}$-norm unit circle in $\mathbb{R}^2$ for a given value of $p\ge0$, inspired by the above [picture](https://commons.wikimedia.org/wiki/File:Minkowski3.png) from Wikipedia. 
 To draw the set $\\{(x,y)\in\mathbb{R}^{2}:|x|^{p} + |y|^{p} = 1\\}$ all you need to do is set the value of $p\ge0$ you want in the box and then click the button to evaluate.
+
 <!-- Embed SageMath cells in your webpages -->
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
 <script>sagecell.makeSagecell({"inputLocation": ".sage"});</script>
