@@ -41,6 +41,11 @@
     name = "博客"
     url = "/post/"
     weight = 5
+	
+  [[zh.menus.main]]
+    name = "笔记"
+    url = "/notes/"
+    weight = 6
 
   [[zh.menus.main]]
     name = "联系方式"
