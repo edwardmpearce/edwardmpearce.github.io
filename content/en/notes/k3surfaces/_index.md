@@ -1,6 +1,6 @@
 +++
 title = "Introduction to K3 Surfaces"
-summary = "Notes from K3 Surfaces Reading Seminar, Autumn Semester 2019-2020 at The University of Sheffield"
+summary = "Notes from K3 Surfaces Reading Seminar, 30/09/2019 at The University of Sheffield"
 
 date = 2019-09-30T00:00:00
 lastmod = 2019-09-30T00:00:00
