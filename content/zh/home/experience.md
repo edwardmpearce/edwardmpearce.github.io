@@ -29,6 +29,21 @@ date_format = "Jan 2006"
   """
 
 [[experience]]
+  title = "癌症数据分析"
+  company = "Health Data Insight, CIC"
+  company_url = ""
+  location = "剑桥"
+  date_start = "2019-07-15"
+  date_end = "2019-09-24"
+  description = """责任包括：
+  
+  - 使用 Python 和 SQL 来获取数据, 使数据统计检验达到自动化, 将数据可视化
+  - Building a framework to analyse synthetic datasets of patient tumour records
+  - Presenting results to HDI board members and Public Health England stakeholders
+  - Chairing Analysts East team meeting; organising social events (group meals, punting)
+  """
+  
+[[experience]]
   title = "研究分析师"
   company = "TAS Services Ltd"
   company_url = ""

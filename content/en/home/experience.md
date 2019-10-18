@@ -29,6 +29,21 @@ date_format = "Jan 2006"
   """
 
 [[experience]]
+  title = "Cancer Data Summer Intern"
+  company = "Health Data Insight, CIC"
+  company_url = ""
+  location = "Cambridge"
+  date_start = "2019-07-15"
+  date_end = "2019-09-24"
+  description = """Responsibilities include:
+  
+  - Using Python and SQL for data extraction, automating statistical tests, visualization
+  - Building a framework to analyse synthetic datasets of patient tumour records
+  - Presenting results to HDI board members and Public Health England stakeholders
+  - Chairing Analysts East team meeting; organising social events (group meals, punting)
+  """
+
+[[experience]]
   title = "Research Analyst"
   company = "TAS Services Ltd"
   company_url = ""
