@@ -11,6 +11,20 @@
 
 - id: back_to_top
   translation: 回到顶部
+  
+# Missing translations
+
+- id: theme_light
+  translation: 明亮模式
+  
+- id: theme_dark
+  translation: 夜间模式
+  
+- id: theme_auto
+  translation: 默认
+  
+- id: slides
+  translation: PPT
 
 # General
 
@@ -18,7 +32,7 @@
   translation: 相关
 
 - id: minute_read
-  translation: 分钟阅读时间
+  translation: 分钟阅读时长
 
 - id: previous
   translation: 上一页
@@ -27,8 +41,11 @@
   translation: 下一页
 
 - id: figure
-  translation: "图%d:"
+  translation: '图%d:'
 
+- id: edit_page
+  translation: 编辑本页
+  
 # Buttons
 
 - id: btn_preprint
@@ -151,8 +168,8 @@
 - id: pub_journal
   translation: 期刊文章
 
-- id: pub_manuscript
-  translation: 手稿
+- id: pub_preprint
+  translation: 预印本
 
 - id: pub_report
   translation: 报告
@@ -163,6 +180,12 @@
 - id: pub_book_section
   translation: 章节
 
+- id: pub_thesis
+  translation: 论文
+
+- id: pub_patent
+  translation: 专利
+  
 # Project details
 
 - id: open_project_site

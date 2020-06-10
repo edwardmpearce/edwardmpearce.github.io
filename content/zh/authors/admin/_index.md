@@ -22,11 +22,11 @@ bio = "我的研究兴趣包括代数几何、组合数学和机器学习。"
 email = ""
 
 # List (academic) interests or hobbies
-interests = [
-  "数学及其应用",
-  "机器学习与统计学",
-  "概率性模型"
-]
+#interests = [
+#  "数学及其应用",
+#  "机器学习与统计学",
+#  "概率性模型"
+#]
 
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
@@ -34,13 +34,13 @@ interests = [
 
 # List qualifications (such as academic degrees)
 [[education.courses]]
-  course = "博士（在读），数学"
-  institution = "谢菲尔德大学"
+  course = "谢菲尔德大学"
+  institution = "数学博士 (在读)"
   year = 2020
 
 [[education.courses]]
-  course = "数学本硕连读 (MMath)"
-  institution = "华威大学"
+  course = "华威大学"
+  institution = "数学本硕连读 (MMath)"
   year = 2016
 
 # Social/Academic Networking
@@ -73,10 +73,10 @@ interests = [
 [[social]]
    icon = "cv"
    icon_pack = "ai"
-   link = "../files/cv20191018.pdf"
+   link = "../files/zhcv20200324.pdf"
 
 +++
 
-目前我于谢菲尔德大学数学和统计学系攻读博士学位，主要研究方向为代数几何与组合数学之间的关系。
+目前于英国谢菲尔德大学攻读数学博士学位，主要研究方向为代数几何与组合数学之间的关系。
 
-除此之外，我对相关科学领域也有着广泛的兴趣爱好，以及学习研究的热忱。例如，机器学习、统计学和数据科学等。 通过在英国和香港两地的实习工作，我熟练掌握Python、SQL和mongoDB等软件的运用，将其灵活应用于数据分析等领域。
+除此之外，我对机器学习、统计学和数据科学也有着极高的学习与研究热忱。 通过在英国和香港两地的实习工作，我熟练掌握Python、SQL和mongoDB等软件的运用，将其灵活应用于数据分析等领域。

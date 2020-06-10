@@ -1,27 +1,30 @@
 +++
 title = "教学"
-summary = "My teaching responsibilities"
+summary = "我的教学责任"
 
 date = 2019-09-27T00:00:00
-lastmod = 2019-09-27T00:00:00
+lastmod = 2020-06-10T00:00:00
 
 draft = false  # Is this a draft? true/false
 
 +++
 
-Current (谢菲尔德大学):
+我在高校研究自己课题的同时，也承担了对本科生的教学工作。我以授课、领导研讨会等形式向来自不同学院的学生们传授数学相关的理论知识以及实用编程。
 
-Responsible for leading tutorials for classes of up to 40 students, marking weekly homework assignments, administering and marking in-class quizzes. Average weekly workload: Lead Demonstrator - 3 hours, Assistant demonstrator - 2 hours, Marking - 2 hours.
+目前教学责任 (谢菲尔德大学):
+
+负责数学和统计学学院、工程学院本科及研究生的教学工作(40人/班, 4课时/周)
 
 - [MAS114] 数和群
 - [MAS115] Mathematical Investigation Skills
-- [MAS151] 工程师的数学
+- [MAS151] Mathematics for Civil Engineering Students
 - [MAS212] Scientific Computation and Simulation
 
 Past (谢菲尔德大学):
 
 - [MAS110] 数学基础1
 - [MAS111] 数学基础2
+- [MAS156] Mathematics for Electrical and Aerospace Engineering Students
 - [MAS221] 数学分析
 - [MAS222] 微分方程
 - [MAS6002] 统计实验室 - MSc Introductory Computing using R
@@ -30,7 +33,8 @@ Past (谢菲尔德大学):
 [MAS111]: https://maths.dept.shef.ac.uk/maths/module_info_2024.html
 [MAS114]: https://maths.dept.shef.ac.uk/maths/module_info_2036.html
 [MAS115]: https://maths.dept.shef.ac.uk/maths/module_info_2178.html
-[MAS156]: https://maths.dept.shef.ac.uk/maths/module_info_2060.html
+[MAS151]: http://engmaths.group.shef.ac.uk/mas151/
+[MAS156]: http://engmaths.group.shef.ac.uk/mas156/
 [MAS212]: https://maths.dept.shef.ac.uk/maths/module_info_2218.html
 [MAS221]: https://maths.dept.shef.ac.uk/maths/module_info_2100.html
 [MAS222]: https://maths.dept.shef.ac.uk/maths/module_info_2104.html
@@ -38,15 +42,14 @@ Past (谢菲尔德大学):
 
 Past (华威大学):
 
-Responsible for supervising two groups of first year mathematics undergraduates, five students per group, two sessions per group per week plus marking.
-Modules covered:
+读研究生时期负责数学系本科一年级学生的小组研讨会、作业批改及讲解(4课时/周)<br>教授课程:
 
 - [MA132] 数学基础
 - [MA133] 微分方程
 - [MA136] 抽象代数的介绍
 - [MA131] 数学分析1和2
 - [MA106] 线性代数
-- [MA134] Geometry and Motion
+- [MA134] 微积分学
 
 [MA132]: https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year1/ma132/
 [MA133]: https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year1/ma133/
@@ -54,9 +57,3 @@ Modules covered:
 [MA131]: https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year1/ma131/
 [MA106]: https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year1/ma106/
 [MA134]: https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year1/ma134/
-
-## Private tutoring
-
-I am available for hire as a private tutor for mathematical and scientific topics up to degree level. Please [contact]({{< ref "/#contact" >}}) me to make an inquiry.
-
-I have previously tutored on mathematics at the levels between GCSE, A Level, and degree level, most recently for a 2nd year engineering student, as well as participating in outreach and voluntary activities at primary and secondary levels. I have also provided proofreading services for essays and dissertations to masters students.

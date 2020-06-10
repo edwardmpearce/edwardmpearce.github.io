@@ -15,6 +15,7 @@
   
   [zh.params]
     description = "罗毅华的个人网站"
+	date_format = "2006/01/02"
 	
   # Navigation Links
   [[zh.menus.main]]
@@ -22,39 +23,39 @@
     url = "#about"
     weight = 1
 
-  [[zh.menus.main]]
-    name = "活动"
-    url = "/activities/"
-    weight = 2
-
-  [[zh.menus.main]]
-    name = "教学"
-    url = "/teaching/"
-    weight = 3
+# Link to a PDF of your resume/CV from the menu.
+# To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
+    [[zh.menus.main]]
+      name = "简历"
+      url = "../files/zhcv20200324.pdf"
+      weight = 2
 
   [[zh.menus.main]]
     name = "研究"
     url = "/research/"
+    weight = 3
+
+  [[zh.menus.main]]
+    name = "教学"
+    url = "/teaching/"
     weight = 4
 
   [[zh.menus.main]]
-    name = "博客"
-    url = "/post/"
+    name = "教育经历"
+    url = "#education"
     weight = 5
-	
+
   [[zh.menus.main]]
-    name = "笔记"
-    url = "/notes/"
+    name = "工作经历"
+    url = "#experience"
     weight = 6
+	
+#  [[zh.menus.main]]
+#    name = "博客"
+#    url = "/post/"
+#    weight = 7
 
   [[zh.menus.main]]
     name = "联系方式"
     url = "#contact"
     weight = 80
-	
-# Link to a PDF of your resume/CV from the menu.
-# To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
-    [[zh.menus.main]]
-      name = "简历"
-      url = "../files/cv20191018.pdf"
-      weight = 70 

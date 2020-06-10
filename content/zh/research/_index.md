@@ -3,20 +3,28 @@ title = "研究"  # Add a page title.
 summary = "我的研究"  # Add a page description.
 
 date = 2019-04-26T00:00:00  # Add today's date.
-# lastmod = 2019-03-29T00:00:00
+lastmod = 2020-06-10T00:00:00
 
 draft = false  # Is this a draft? true/false
 
 +++
 
-## Equivariant Hilbert schemes and partition combinatorics
+## 博士论文 （2020）
 
-As a PhD student I study interactions between algebraic geometry and combinatorics, in particular understanding topological properties of orbifold Hilbert schemes via core and quotient partitions and G-constellations. This work is under the supervision of Dr Paul Johnson. I have written an online [tutorial](https://edwardmpearce.github.io/tutorial-partitions/) (work-in-progress) as background material on the combinatorial aspect of my research.
+- 研究方向：代数几何与组合数学之间的关系<br>Studying topological properties of orbifold Hilbert schemes via connections to core and quotient partitions and G-constellations
+- 研究题目： Equivariant Hilbert schemes and partition combinatorics
+- 博士导师： Dr Paul Johnson
+- 研究相关的组合数学概念介绍，请见个人[网站](https://edwardmpearce.github.io/tutorial-partitions/)
 
-## McKay Correspondence
+## 硕士论文 （2016）
 
-In 2015 I secured a £1000 grant from the University of Warwick's Undergraduate Research Support Scheme ([URSS](https://warwick.ac.uk/services/skills/urss/)) to undertake an 8 week summer research project researching the 3D McKay correspondence.  I wrote code to compute McKay quivers for finite subgroups of SL(3,C) which can be found [here](https://github.com/edwardmpearce/urss-project). This work was under the supervision of Prof Miles Reid (FRS).
+- 研究题目： Geometry of Syzygies ({{% staticref "files/mastersthesis.pdf" "newtab" %}}论文{{% /staticref %}})
+- 硕士导师： Prof Diane Maclagan
+- 核心内容： Gives an introduction to minimal free resolutions and uses Macaulay2 (computer algebra software) to compute examples of toric varieties to test the Eisenbud-Goto regularity conjecture
 
-## Geometry of Syzygies 
+## 本科暑期研究项目 （2015）
 
-My master's {{% staticref "files/mastersthesis.pdf" %}}thesis{{% /staticref %}} gives an introduction to minimal free resolutions and uses Macaulay2 to compute examples of toric varieties to test the Eisenbud-Goto regularity conjecture. This work was under the supervision of Prof Diane Maclagan.
+- 获得华威大学 [URSS](https://warwick.ac.uk/services/skills/urss/) 为期8周的暑期项目研究奖学金
+- 研究课题： 3D McKay Correspondence for finite subgroups of $\mathrm{SL}(3,\mathbb{C})$ [(编码库)](https://github.com/edwardmpearce/urss-project)
+- 研究导师： Prof Miles Reid (FRS)
+- 研究成果： Produced a computer program to compute McKay quivers for finite subgroups of $\mathrm{SL}(3,\mathbb{C})$

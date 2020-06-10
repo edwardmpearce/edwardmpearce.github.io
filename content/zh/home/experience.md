@@ -5,12 +5,12 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 40  # Order that this section will appear.
 
-title = "经历"
+title = "实习和其他经历"
 subtitle = ""
 
 # Date format for experience
 #   Refer to https://sourcethemes.com/academic/docs/customization/#date-format
-date_format = "Jan 2006"
+date_format = "2006年01月"
 
 # Experiences.
 #   Add/remove as many `[[experience]]` blocks below as you like.
@@ -18,60 +18,47 @@ date_format = "Jan 2006"
 #   Leave `date_end` empty if it's your current employer.
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 [[experience]]
-  title = "博士在读"
-  company = "谢菲尔德大学"
+  title = "数据分析师"
+  company = "Health Data Insight"
   company_url = ""
-  location = "谢菲尔德"
-  date_start = "2016-10-01"
-  date_end = ""
-  description = """
-  Taking charge of independent study and conducting research in mathematics as well as teaching foundational mathematics and programming skills to undergraduates, master's students, and the general public, whilst at the same time developing my own interests in Chinese language and culture, data science and machine learning, and web development through evening classes, extracurricular reading, and personal projects. 
-  """
-
-[[experience]]
-  title = "癌症数据分析"
-  company = "Health Data Insight, CIC"
-  company_url = ""
-  location = "剑桥"
+  location = "英国剑桥"
   date_start = "2019-07-15"
   date_end = "2019-09-24"
-  description = """责任包括：
+  description = """主要职责：
   
-  - 使用 Python 和 SQL 来获取数据, 使数据统计检验达到自动化, 将数据可视化
-  - Building a framework to analyse synthetic datasets of patient tumour records
-  - Presenting results to HDI board members and Public Health England stakeholders
-  - Chairing Analysts East team meeting; organising social events (group meals, punting)
+  - 使用Python和SQL提取英国癌症病患的数据，使统计检验自动化、可视化（Matplotlib， Plotly）
+  - 建立框架，分析肿瘤患者的综合数据
+  - 在公司年会向英国公共卫生部董事会成员展示汇报研究成果
   """
   
 [[experience]]
-  title = "研究分析师"
+  title = "研究分析员"
   company = "TAS Services Ltd"
   company_url = ""
-  location = "香港"
+  location = "中国香港"
   date_start = "2016-07-22"
   date_end = "2016-09-26"
-  description = """责任包括：
+  description = """主要职责：
   
-  - 使用 Python 来 web scraping, 数据分析 and interfacing with SQL and mongoDB
-  - Automating data comparison across multiple sources 为了准确的数据管理
-  - Linking databases and preparing data for statistical modelling
-  - Discovering a new culture through 国际工作经历
+  - 使用Python软件进行网页抓取（requests， BeautifulSoup）及数据分析（pandas）
+  - 通过SQL和mongoDB软件将数据分析成果输出、倒入数据库
+  - 编写数据自动化分析程序，从而高效对比不同信息源数据，进行精准的数据管理
+  - 为统计建模编辑数据，链接数据库
   """
 
 [[experience]]
-  title = "Society President"
-  company = "Warwick Maths Society"
+  title = "主席"
+  company = "华威大学数学社团"
   company_url = ""
   location = "华威大学"
   date_start = "2014-02-28"
   date_end = "2016-04-04"
   description = """获得的成就和技能：
   
-  - Elected twice to the executive committee, first as sponsorship officer, second as president.
-  - Secured two new sponsors for the society, increasing sponsorship funds by 100%
-  - Managing a team of 15 exec members, chairing meetings, and organising events of varying sizes for our 900-strong membership, including external trips, summer BBQ
-  - Presenting at the Warwick Imperial undergraduate conference on my URSS project
-  - Delivered a revision lecture on linear algebra to over 200 of my peers
+  - 领导由15人构成的社团管理层，管理900名社团会员，主持社团会议，组织社团活动
+  - 成功获得两名新的社团赞助商，赞助资金较前一年增加至二倍（5000英镑）
+  - 在华威大学、帝国理工大学联合本科会议上作暑期研究的演讲
+  - 组织200名同年级数学系学生做线性代数期末考试复习讲座，并针对复习内容进行讲解
   """  
   
 +++

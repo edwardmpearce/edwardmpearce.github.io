@@ -3,7 +3,7 @@
 widget = "featurette"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 30  # Order that this section will appear.
+weight = 50  # Order that this section will appear.
 
 title = "技能"
 subtitle = ""
@@ -21,14 +21,14 @@ subtitle = ""
 [[feature]]
   icon = "python"
   icon_pack = "fab"
-  name = "Python"
-  description = "I am proficient in Python and key packages which form the basis of the data scientist's toolkit (pandas, scikit-learn, Tensorflow). I have completed projects involving web scraping, data analysis and interfacing with SQL and mongoDB."
+  name = "编程软件"
+  description = "精通: Python (pandas, scikit-learn, Tensorflow, Plotly), SageMath, C (OpenMP, CUDA), R. <br>熟练: Java, Matlab, Mathematica, Magma. "
   
 [[feature]]
   icon = "laptop-code"
   icon_pack = "fas"
-  name = "电脑软件"
-  description = "I solve problems using software tools, including version control (git), web development, database management, numerical programming (Matlab, Sage), and cloud computing (Collab, CoCalc)."
+  name = "计算机软件"
+  description = "数据库: MySQL, Oracle SQL, mongoDB. <br>LaTeX, git, Unix shell (bash), Hugo (网页程序设计)"
   
 #[[feature]]
 #  icon = "r-project"
