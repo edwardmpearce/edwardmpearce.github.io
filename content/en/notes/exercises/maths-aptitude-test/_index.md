@@ -9,6 +9,9 @@ draft: false  # Is this a draft? true/false
 
 ---
 
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+<script>sagecell.makeSagecell({inputLocation: '#markovcell', languages: ["python"], template: sagecell.templates.minimal});</script>
+
 This page will contain selected solutions to exercises from the Sample Mathematics Aptitude Test 
 found online [here](https://gchq-careers.co.uk/media/30806/Sample_Maths_Aptitude_Test.pdf).
 
@@ -73,7 +76,7 @@ Show that either $\gcd(p, a − 1)$ or $\gcd(b, p − 1)$ must be greater that $
 #### SQ2 Solution
 
 First, recall two important facts that we will use in the proof: [Fermat's Little Theorem](https://en.wikipedia.org/wiki/Fermat%27s_little_theorem) 
-and [Bézout's identity](https://en.wikipedia.org/wiki/B%C3%A9zout%27s_identity). We will also draw on ideas from elementary group theory, 
+and [Bézout's identity]. We will also draw on ideas from elementary group theory, 
 in particular the notion of the [order](https://en.wikipedia.org/wiki/Order_(group_theory)) of a group element, 
 and properties of $\mathbb{Z}/p\mathbb{Z}$.
 
@@ -98,6 +101,8 @@ once again using that $a^{b} \equiv 1 \\ (\mathrm{mod}\\ p)$, and $a^{p - 1} \eq
 <br>Hence $a - 1$ is divisible by $p$ as required.
 
 Tags: Modular arithmetic, Number theory, Group theory
+
+[Bézout's identity]: https://en.wikipedia.org/wiki/B%C3%A9zout%27s_identity
 
 ### SQ3. Estimating coin bias
 
@@ -293,7 +298,7 @@ uniformly from $[0, 1]$, stopping at the first $x_{T}$ that is strictly less tha
 the expected value of $T$ is infinite. Suggest, with a brief explanation, a plausible value
 of $P(T = \infty)$ for a real-world (pseudo-)random number generator implemented on a computer.
 
-#### SQ5 Solution
+#### SQ6 Solution
 
 We first consider the expected stopping time conditional on the value of $x_{0}$, 
 i.e. the expected value of $T$ given that $x_{0} = p$ for some $p \in [0, 1]$.
@@ -350,9 +355,9 @@ Therefore, a plausible value for $P(T = \infty)$ is $P(x_{0} = 0)$, in which cas
 The actual value of $P(x_{0} = 0)$ may depend on the kind of (pseudo-)random number generator used and possibly on incidences of numerical underflow,
 but can be reasonably approximated by the reciprocal of the number of distinct (pseudo-)random values that can be generated.
 For a simple example of a pseudo-random number generator based on modular arithmetic and an affine linear transform, 
-see [here](https://en.wikipedia.org/wiki/Linear_congruential_generator).
+see [here][Linear congruential generator].
 
-#### Aside
+#### SQ6 Aside
 
 More pictorial proofs regarding ['staircase series'][staircase series] can be found in another Mathematics Magazine article published in 2018, whilst 
 an excellent collection of other proofs without words can be found at the Art of Problem Solving [online wiki][AOPS: Proofs without words], including
@@ -668,3 +673,298 @@ References:
 [Valuation]: https://en.wikipedia.org/wiki/Valuation_(algebra)
 [Fundamental theorem of arithmetic]: https://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic
 [Integer factorization]: https://en.wikipedia.org/wiki/Integer_factorization
+
+## Longer Questions
+
+### LQ1. Rock, Paper, Scissors
+
+Alice and Bob play Rock, Paper, Scissors until one or the other is 5 wins ahead. They
+generate their wins at random, so, in each round, the outcomes are equiprobably win, lose or draw.
+After 10 rounds, Alice is 1 ahead. After 13 rounds, one or the other is 1 ahead. At round
+20, one of them attains the 5 win lead and the game ends. What is the probability that
+Alice is the ultimate winner?
+
+#### LQ1 Solution
+
+A principled way to approach this question would be to model the process as a Markov chain, similar to [SQ6](#sq6-random-number-generation).
+Let $x_{t}$ be size of Alice's lead in round $t$. Then, in general, we have state space $x_{t} \in \\{ 0, \pm 1, \pm 2, \pm 3, \pm 4, \pm 5 \\}$ 
+and transition probabilities $(p_{i,i-1}, p_{i,i}, p_{i,i+1}) = (1/3, 1/3, 1/3)$ for states $-4 \le i \le 4$, and absorbing states $-5$ and $5$.
+We are given the specific information that $x_{0} = 0$, $x_{10} = 1$, $x_{13} \in \\{ -1, 1 \\}$, $x_{20} \in \\{ -5, 5 \\}$, 
+and $x_{t} \notin \\{ -5, 5 \\}$ for $t < 20$.
+
+Due to the memoryless property, we need only consider the process from round 10 ($t = 10$) onwards, when Alice has a lead of $1$.
+We could then combine this model with conditional probability calculations based on the information provided in the question.
+Ultimately, we wish to calculate 
+$$ P(x_{20} = -5 | x_{20} \in \\{ -5, 5 \\}, x_{13} \in \\{ -1, 1 \\}, x_{10} = -1, x_{t} \notin \\{ -5, 5 \\} \text{ for } t < 20) $$
+
+We will follow this principled approach later to verify our answer, but first use a quicker method which does not require matrix multiplication.
+
+Given that Alice has a lead of $1$ at round 10 and we know that at round 13 Alice has a lead of either $1$ or $-1$ (i.e. Bob leads by $1$), 
+we can deduce that at round 13 Alice has a lead of $1$ with probability $\frac{7}{10}$ and a lead of $-1$ with probability $\frac{3}{10}$.
+
+For Alice to make a net loss of $2$ over three rounds the sequence of outcomes would have to consist of a permutation of $2$ losses and $1$ draw 
+$(D + 2L)$, for which there are $3$ possibilities; whilst making a net gain/loss of $0$ over three rounds requires a permutation of either 
+one win, one loss, and one draw $(D + L + W)$, or three draws $(3D)$, for which there are $6 + 1 = 7$ possibilities.
+Then, as each set of outcomes subject to the constraints is equally likely, we obtain the probabilities $\frac{3}{3 + 7}$ and $\frac{7}{3 + 7}$.
+
+Next, we consider the number of sequences of outcomes over seven rounds that could lead the player who has a lead of $1$ at round 13 to have
+a lead of either $5$ or $-5$ at round 20 causing the game to end. 
+
+For the net loss of $6$ over 7 rounds, the outcomes must be $6$ losses and $1$ draw $(D + 6L)$, 
+where the last loss must come at the end of the sequence in round 20 so that the game doesn't end earlier, which gives $6$ possibilities
+according to which round the draw happens. 
+
+For a net gain of $4$ over 7 rounds, the set of outcomes can be either $(3D + 4W)$ or $(D + L + 5W)$,
+where we must take care not to count cases where the game ends before round 20. For the case of $4$ wins and $3$ draws, it suffices to require
+the last win to occur in round 20, after which we count the possible permutations of the set $(3D + 3W)$ of which there are $6!/(3!)^{2} = 20$.
+
+For the player with a lead of $1$ in round 13 to ultimately win the game in round 20 by making $5$ wins, $1$ loss, and $1$ draw, 
+the last win must occur in round 20 to avoid the game ending early. From the remaining $30 = 6 \times 5$ configurations of $(D + L + 4W)$
+we exclude the $5$ in which the loss occurs in round 19 (since that would imply a lead of $5$ before round 20), and the 
+specific sequence of outcomes $(WWWWLD)$, for which the game would actually have ended in round 18, leaving $24 = 30 - 5 - 1$ valid sequences.
+
+Therefore, if a player is leading by $1$ in round 13 and we know that the game ends in round 20, there is a probability of 
+$\frac{44}{50} = \frac{22}{25}$ that this player wins and a probability of $\frac{6}{50} = \frac{3}{25}$ that they lose.
+
+Combining all of this information together, we find that the probability that Alice is the ultimate winner is 
+$$\frac{7}{10} \cdot \frac{22}{25} + \frac{3}{10} \cdot \frac{3}{25} = \frac{163}{250} = 65.2\\%$$
+by aggregating the possibility that she retains the lead of $1$ at round 13 and goes on to win overall in round 20 with the possibility that 
+she pulls back from trailing by $1$ in round 13 to claim victory in round 20.
+
+The Python code listing below models the problem as an [Absorbing Markov Chain] and calculates the probability that Alice wins the game by 
+analysing powers of the transition matrix multiplied by vector probability distribution of the state at times $t = 1-$, when $P(x_{10} = 1) = 1$,
+and $t = 13$, when $P(x_{13} \in \\{ -1, 1 \\}) = 1$.
+
+This code can be run to verify the above derivation of Alice's winning probability by clicking the `Evaluate` button beneath the code listing.
+
+``` python
+import numpy as np
+from fractions import Fraction
+
+# Set up the transition matrix
+P = np.zeros((11, 11), dtype='object')
+
+for i in range(1, 10):
+    P[i, i-1:i+2] = Fraction(1, 3)
+
+# Absorbing states (-5, 5 coded as index 0, 10, respectively)
+P[0, 0] = Fraction(1)
+P[10, 10] = Fraction(1)
+
+# Alice leads by 1 in round 10 (coded as index 6 = 5 + 1)
+x10 = np.zeros(11, dtype='object')
+x10[6] = Fraction(1)
+
+# Probability distribution of (transient) states in round 13
+x13 = np.linalg.matrix_power(P, 3).dot(x10)
+
+# Condition on being in state -1 or 1 at round 13 (index 4 and 6, resp.)
+x13_normalised = np.zeros(11, dtype='object')
+x13_normalised[4] = x13[4] / (x13[4] + x13[6])
+x13_normalised[6] = x13[6] / (x13[4] + x13[6])
+
+# Probability distribution of transient states in round 19
+x19 = np.linalg.matrix_power(P, 6).dot(x13_normalised)
+
+# Condition on being in state -5 or 5 at round 20
+results = {"Alice win": x19[9] / (x19[1] + x19[9]),
+           "Alice lose": x19[1] / (x19[1] + x19[9])}
+print(results) # {'Alice win': Fraction(163, 250), 'Alice lose': Fraction(87, 250)}
+print(float(results["Alice win"])) # 0.652
+```
+
+<div id="markovcell">
+<script type="text/x-sage">
+import numpy as np
+from fractions import Fraction
+P = np.zeros((11, 11), dtype='object')
+P[0, 0] = Fraction(1)
+P[10, 10] = Fraction(1)
+for i in range(1, 10):
+    P[i, i-1:i+2] = Fraction(1, 3)
+x10 = np.zeros(11, dtype='object')
+x10[6] = Fraction(1)
+x13 = np.linalg.matrix_power(P, 3).dot(x10)
+x13_normalised = np.zeros(11, dtype='object')
+x13_normalised[4] = x13[4] / (x13[4] + x13[6])
+x13_normalised[6] = x13[6] / (x13[4] + x13[6])
+x19 = np.linalg.matrix_power(P, 6).dot(x13_normalised)
+results = {"Alice win": x19[9] / (x19[1] + x19[9]), "Alice lose": x19[1] / (x19[1] + x19[9])}
+print(results)
+print(float(results["Alice win"]))
+</script>
+</div>
+
+Tags: Probability, Markov Chains
+
+Related Reading:
+- [Simulating Chutes & Ladders in Python](https://jakevdp.github.io/blog/2017/12/18/simulating-chutes-and-ladders/)
+- [Analysing Snakes and Ladders as a Markov Chain](https://scipython.com/book/chapter-6-numpy/additional-problems/analysing-snakes-and-ladders-as-a-markov-chain/)
+
+### LQ2. 
+
+You are monitoring a data stream which is delivering very many $32$-bit quantities at a rate of $10$ Megabytes per second. 
+You know that either:
+1. All values occur equally often, *or*
+2. Half of the values occur $2^{10}$ times more often than others (but you dont know anything about which would be the more common values).
+
+You are allowed to read the values off the data stream, but you only have $2^{20}$ bytes of memory.
+Describe a method for determining which of the two situations, 1 or 2, occurs. 
+Roughly how many data values do you need to read to be confident of your result with a probability of $0.999$? 
+(This is about the $3$ sigma level – $3$ standard deviations of a normal distribution.)
+
+### LQ3. 
+
+A $2 \times N$ rectangle is to be tiled with $1 \times 1$ and $2 \times 1$ tiles. Prove that the number of
+possible tilings tends to $kx^{N}$ as $N$ gets large. Find $x$, to $2$ decimal places.
+
+#### LQ3 Initial ideas
+
+Does the problem description mean to imply that the $2 \times 1$ tiles must always be placed vertically?
+Once we have proven that the number of possible tilings tends to $kx^{N}$ as $N$ gets large, we could approximate $x$ 
+using the ratio of empirical values. Let $a_{N}$ denote the number of possible tilings of a $2 \times N$ rectangle by 
+$1 \times 1$ and $2 \times 1$ tiles. Then as $N$ gets large we have $\frac{a_{N+1}}{a_{N}} \approx \frac{kx^{N+1}}{kx^{N}} = x$.
+It is likely that $a_{N}$ satisfies a recurrence relation.
+
+### LQ4. Prime Power Divisors
+
+The Prime Power Divisors (PPD) of a positive integer are the largest prime powers that divide it. 
+For example, the PPD of $450$ are $2$, $9$, $25$. Which numbers are equal to the sum of their PPD?
+
+#### LQ4 Solution
+
+Powers of prime numbers are trivially equal to the sum of their prime power divisors, and these are the only numbers with this property.
+Let $f : \mathbb{N} \to \mathbb{N}$ be the function which maps a positive integer to the sum of its prime power divisors.
+So $f(1) = 0$, $f(6) = 2 + 3 = 5$, $f(450) = 2 + 9 + 25 = 36$, and $f(p^{k}) = p^{k}$ for $p$ prime and $k \in \mathbb{N}$.
+Note also that if $a, b$ are coprime, then $f(ab) = f(a) + f(b)$.
+
+We claim that $f(n) \le n$ for all positive integers $n$, with equality if and only if $n$ is a prime power.
+Suppose, for contradiction, that the set of positive integers which are not a prime power but have $f(n) \ge n$ is nonempty, and let $n_{0}$
+be the smallest element in this set. By assumption, we can express $n_{0}$ as a product of coprime integers $a, b \ge 2$ since $n_{0}$ is a 
+composite number with at least two distinct prime factors. The factors $a$ and $b$ are distinct since they are coprime and both greater than $1$.
+Then $n_{0} \le f(n_{0}) = f(ab) = f(a) + f(b) \le a + b < 2 \max(a, b) \le ab = n_{0}$, which is a contradiction.
+Therefore, if $n$ is not a prime power, then $f(n) < n$. This completes the proof.
+
+Tags: Number theory, prime factors
+
+Related Reading:
+- [Multiplicative function (number theory)](https://en.wikipedia.org/wiki/Multiplicative_function)
+
+### LQ5. 
+
+$353, 46, 618, 30, 877, 235, 98, 24, 107, 188, 673$ are successive large powers of an integer $x$ modulo a 3-digit prime $p$. Find $x$ and $p$.
+
+#### LQ5 Solution
+
+This problem is related to cracking a pseudo-random number generator known as the [Lehmer random number generator], which is a special case of a 
+[linear congruential generator][Linear congruential generator]. Determining $x$ and $p$ would allow us to calculate subsequent terms in the sequence. 
+A subsequent problem could be find out which large powers of $x$ modulo $p$ these are, which is known as the [discrete logarithm][Discrete logarithm] 
+problem. As we are told these are successive powers of $x$ modulo $p$, one would only need to solve this problem for one number in the sequence.
+
+We first determine $x$ by making use of [Bézout's identity] and the [Extended Euclidean algorithm].
+Label the elements of the sequence by $a_{n}$ for $n = 0, 1, \ldots, 10$. Then we have that $a_{n} x \equiv a_{n+1} \\ (\mathrm{mod}\\ p)$ for 
+$n = 0, 1, \ldots, 9$. We would like to find indices $n_{1}, n_{2}$ such that $\gcd(a_{n_{1}}, a_{n_{2}}) = 1$, then apply Bézout's identity/EEA 
+to find integers $s, t$ such that $a_{n_{1}} s + a_{n_{2}} t = 1$. From this we could deduce 
+$$x = (a_{n_{1}} s + a_{n_{2}} t) x = (a_{n_{1}} x) s + (a_{n_{2}} x) t \equiv a_{n_{1} + 1} s + a_{n_{2} + 1} t \\ (\mathrm{mod}\\ p)$$
+
+We may assume that $p$ is a 3-digit prime number greater than the largest number appearing in the sequence, so $877 < p < 999$.
+If we are lucky, we will be able to find $n_{1}, n_{2}, s, t$ such that $0 < a_{n_{1} + 1} s + a_{n_{2} + 1} t < 881$ so that we have a primitive
+expression for $x \\ (\mathrm{mod}\\ p)$. Once we know $x$, we can determine $p$ by checking which 3-digit prime in the given range satisfies 
+the equations $a_{n} x \equiv a_{n+1} \\ (\mathrm{mod}\\ p)$ for $n = 0, 1, \ldots, 9$. That is to say, we may check for 3-digit prime factors 
+of $a_{n} x - a_{n+1}$.
+
+We pick $a_{6} = 98$ and $a_{8} = 107$ (since we know $107$ is prime), so that $9 = 107 - 98$, $8 = 98 - 10 \cdot 9$, and 
+$$1 = 9 - 8 = 9 - (98 - 10 \cdot 9) = 11 (107 - 98) - 98 = 11 \cdot 107 - 12 \cdot 98.$$
+Thus $x = 11 \cdot 107 x - 12 \cdot 98 x \equiv 11 \cdot 188 - 12 \cdot 24 = 2068 - 288 = 1780 \\ (\mathrm{mod}\\ p)$.
+This is outside of the desired range, but will be useful once we find another expression for $x \\ (\mathrm{mod}\\ p)$ since 
+we can determine $p$ by factoring the difference between the two expressions. We could then reduce $x$ modulo $p$ if necessary.
+
+Next, we pick $a_{7} = 24$ and $a_{8} = 107$, so that $11 = 107 - 4 \cdot 24$, then $2 = 24 - 2 \cdot 11$, and
+$$1 = 11 - 5 \cdot 2 = 11 - 5 (24 - 2 \cdot 11) = 11 (107 - 4 \cdot 24) - 5 \cdot 24 = 11 \cdot 107 - 49 \cdot 24.$$
+Therefore, $x = 11 \cdot 107 x - 49 \cdot 24 x \equiv 11 \cdot 188 - 49 \cdot 107 = 2068 - 5243 = -3175 \\ (\mathrm{mod}\\ p)$.
+
+It follows that $1780 - (-3175) = 4955$ is a multiple of $p$, where $4955 = 5 \cdot 991$, so our 3-digit prime is $p = 991$.
+Consequently, we may write $x \equiv 1780 \equiv 789 \equiv -202 \\ (\mathrm{mod}\\ 991)$.
+
+The following simple script calculates the discrete logarithm $\log_{789}(353)$ in $\mathbb{Z} / 991 \mathbb{Z}$. 
+In particular we find that `353 = 789^62 mod 991`. This brute-force 'trial multiplication' algorithm will not scale well as the prime $p$ increases.
+
+``` python
+x, p = 789, 991
+target = 353
+el = 1
+x_pow = 0
+while(el != target):
+    x_pow += 1
+    el *= x
+    el %= p
+print(f"{target} = {x}^{x_pow} mod {p}")
+```
+
+References:
+- [Lehmer random number generator]
+- [Linear congruential generator]
+- [Discrete logarithm]
+- [Extended Euclidean algorithm]
+
+[Lehmer random number generator]: https://en.wikipedia.org/wiki/Lehmer_random_number_generator
+[Linear congruential generator]: https://en.wikipedia.org/wiki/Linear_congruential_generator
+[Discrete logarithm]: https://en.wikipedia.org/wiki/Discrete_logarithm
+[Extended Euclidean algorithm]: https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm
+
+### LQ6.
+
+$(X_{1}, Y_{1}),(X_{2}, Y_{2}), \ldots, (X_{n}, Y_{n})$ are $n$ ordered points in the Cartesian plane that are 
+successive vertices of a non-intersecting closed polygon.
+Describe how to find efficiently a diagonal (that is, a line joining 2 vertices) that lies entirely in the interior of the polygon.
+Repeated application of this process will completely triangulate the interior of the polygon. 
+Estimate the worst case number of arithmetic operations needed to complete the triangulation.
+
+### LQ7. Semigroups
+
+A *semigroup* is a set $S$ with an associative operation, which we will write as multiplication.
+That is, $x(yz) = (xy)z$ for all $x, y, z \in S$.
+1. Suppose that a finite semigroup $S$ has the property that for all $x \in S$ there is an integer $n > 1$ such that $x^{n} = x$. 
+Is it true that S is, in fact, a group?
+2. Suppose that a finite semigroup $S$ has the property that for all $x \in S$ there is an integer $n$ such that $x^{n+1} = x^{n}$. 
+Show that the only subsets of $S$ which form a group are of size $1$.
+
+### LQ8. Finite state machines and languages
+
+A *finite state machine* $M$ consists of a finite set of states, each having two arrows leading
+out of it, labelled $0$ and $1$. Each arrow from state $x$ may lead to any state (both may lead
+to the same state, which might be $x$).
+One state is labelled the "initial" state; one or more states are labelled "accept". The
+machine reads a finite binary string by starting at "initial" and considering each symbol
+in the string in turn, moving along the arrow with that label to the next state until the
+end of the string is reached. If the final state is labelled "accept", the machine accepts
+the string.
+The *language*, $L(M)$ of the machine is the set of all the finite binary strings that the
+machine accepts.
+1. Design a machine whose language is all palindromic strings of length $6$ (i.e., strings
+for which the last $3$ symbols are a reflection of the first $3$).
+2. Suppose that $L(M)$ is not finite. Show that the number of strings in $L(M)$ of length
+$n$ or less grows linearly with $n$.
+3. Show that there is no machine such that $L(M)$ consists of all twice-repeated strings.
+
+### LQ9. 
+
+Suppose $P$ is a permutation on $\\{ 0, 1, \ldots, n − 1 \\}$. We want to know the length of the longest monotonically increasing subsequence.
+That is, the largest $m$ such that there exist monotonically increasing $j_{1}, j_{2}, \ldots, j_{m}$ 
+for which $P(j_{1}), P(j_{2}), \ldots, P(j_{m})$ are also monotonically increasing.
+Describe an algorithm that will determine $m$ using $O(n^{2})$ time and $O(n)$ memory.
+
+### LQ10. 
+
+Given $541$ points in the interior of a circle of unit radius, show that there must be a subset
+of $10$ points whose diameter (the maximum distance between any pair of points) is less than $\frac{\sqrt{2}}{4}$.
+
+Tags: Pigeonhole principle
+
+### LQ11. Directed hypercube graph
+
+Show how the edges of a cube ($8$ vertices; $12$ edges) can be directed so that some vertices
+have all edges pointing out (i.e., directed away from the vertex), and the remainder have one edge out and two in.
+Suppose the edges of a $5$-dimensional hypercube ($32$ vertices, $80$ edges) are directed so
+that all vertices have either $5$ edges pointing out, or $4$ edges in and $1$ out. 
+Show that every $4$-dimensional subcube must contain precisely $6$ of the $5$-out vertices.
