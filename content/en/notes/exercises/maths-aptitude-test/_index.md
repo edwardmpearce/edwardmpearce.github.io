@@ -801,7 +801,7 @@ Related Reading:
 - [Simulating Chutes & Ladders in Python](https://jakevdp.github.io/blog/2017/12/18/simulating-chutes-and-ladders/)
 - [Analysing Snakes and Ladders as a Markov Chain](https://scipython.com/book/chapter-6-numpy/additional-problems/analysing-snakes-and-ladders-as-a-markov-chain/)
 
-### LQ2. 
+### LQ2. The signal and the noise
 
 You are monitoring a data stream which is delivering very many $32$-bit quantities at a rate of $10$ Megabytes per second. 
 You know that either:
@@ -813,18 +813,21 @@ Describe a method for determining which of the two situations, 1 or 2, occurs.
 Roughly how many data values do you need to read to be confident of your result with a probability of $0.999$? 
 (This is about the $3$ sigma level – $3$ standard deviations of a normal distribution.)
 
-### LQ3. 
+### LQ3. Asymptotic number of tilings
 
 A $2 \times N$ rectangle is to be tiled with $1 \times 1$ and $2 \times 1$ tiles. Prove that the number of
 possible tilings tends to $kx^{N}$ as $N$ gets large. Find $x$, to $2$ decimal places.
 
 #### LQ3 Initial ideas
 
-Does the problem description mean to imply that the $2 \times 1$ tiles must always be placed vertically?
+Does the problem description mean to imply that the $2 \times 1$ tiles must always be placed vertically? Probably not.
 Once we have proven that the number of possible tilings tends to $kx^{N}$ as $N$ gets large, we could approximate $x$ 
 using the ratio of empirical values. Let $a_{N}$ denote the number of possible tilings of a $2 \times N$ rectangle by 
 $1 \times 1$ and $2 \times 1$ tiles. Then as $N$ gets large we have $\frac{a_{N+1}}{a_{N}} \approx \frac{kx^{N+1}}{kx^{N}} = x$.
-It is likely that $a_{N}$ satisfies a recurrence relation.
+
+It is likely that $a_{N}$ satisfies a recurrence relation, but care will need to be taken to avoid double-counting.
+Any valid tiling can be reflected through the horizontal line passing through the midpoint of the rectangle. This allows us to distinguish between
+symmetric and asymmetric tilings with respect to this reflection.
 
 ### LQ4. Prime Power Divisors
 
@@ -850,7 +853,7 @@ Tags: Number theory, prime factors
 Related Reading:
 - [Multiplicative function (number theory)](https://en.wikipedia.org/wiki/Multiplicative_function)
 
-### LQ5. 
+### LQ5. Parameters of a PRNG
 
 $353, 46, 618, 30, 877, 235, 98, 24, 107, 188, 673$ are successive large powers of an integer $x$ modulo a 3-digit prime $p$. Find $x$ and $p$.
 
@@ -912,7 +915,7 @@ References:
 [Discrete logarithm]: https://en.wikipedia.org/wiki/Discrete_logarithm
 [Extended Euclidean algorithm]: https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm
 
-### LQ6.
+### LQ6. Complexity of triangulating a polygon
 
 $(X_{1}, Y_{1}),(X_{2}, Y_{2}), \ldots, (X_{n}, Y_{n})$ are $n$ ordered points in the Cartesian plane that are 
 successive vertices of a non-intersecting closed polygon.
@@ -928,6 +931,26 @@ That is, $x(yz) = (xy)z$ for all $x, y, z \in S$.
 Is it true that S is, in fact, a group?
 2. Suppose that a finite semigroup $S$ has the property that for all $x \in S$ there is an integer $n$ such that $x^{n+1} = x^{n}$. 
 Show that the only subsets of $S$ which form a group are of size $1$.
+
+#### LQ7 Solution
+
+The set $S = \\{ 0, 1 \\}$ forms an abelian semigroup with the usual multiplication of natural numbers, i.e. $0 \cdot 0 = 0$, $1 \cdot 1 = 1$, 
+and $1 \cdot 1 = 0 \cdot 1 = 0$. Associativity is inherited as a sub-semigroup of the natural numbers $\mathbb{N}$, otherwise one could check
+the 8 possible products of three elements. This is an example of a finite semigroup satisfying property 1 above, as we have $x^{2} = x$ 
+for all $x \in S$. Moreover, the element $1 \in S$ is the multiplicative identity. However, $S$ is not a group 
+since $0 \in S$ has no inverse element in $S$. Therefore, a finite semigroup satisfying property 1 above is not necessarily a group.
+
+Now suppose $S$ is a finite semigroup with the property that for all $x \in S$ there is an integer $n$ such that $x^{n+1} = x^{n}$. 
+Suppose that $G$ is a subset of $S$ that forms a group. Then we know by the definition of a group that $G$ contains an identity element $1_{G}$,
+and thus the size of $G$ is at least $1$. 
+Suppose, for contradiction, that the size of $G$ is strictly greater than $1$. Then there must exist another element $x \in G$ with $x \neq 1_{G}$.
+By the assumption on elements of $S$, there is an integer $n$ such that $x^{n+1} = x^{n}$, and this is an equation in $G$ since groups are closed 
+under the group operation. In particular, $x^{n} \in G$, so there is an inverse $(x^{n})^{-1} \in G$ which we can multiply the above equation by
+to find $x = x^{n+1} \cdot (x^{n})^{-1} = x^{n} \cdot (x^{n})^{-1} = 1_{G}$, which contradicts our assumption that $x \neq 1_{G}$.
+Therefore, if $S$ is a finite semigroup satisfying property 2 above, then if there is any subset $G$ of $S$ which forms a group, it must necessarily
+be a group of size $1$.
+
+Tags: Semigroups, groups
 
 ### LQ8. Finite state machines and languages
 
@@ -947,19 +970,53 @@ for which the last $3$ symbols are a reflection of the first $3$).
 $n$ or less grows linearly with $n$.
 3. Show that there is no machine such that $L(M)$ consists of all twice-repeated strings.
 
-### LQ9. 
+#### LQ8 Partial Solution
+
+For part 1, my initial idea was to imagine a finite state machine $M$ which could be visualized somewhat like a perfect binary tree of depth $7$ 
+with a few adjustments. The initial state would be at the root of the tree, each branch would encode one of the $2^{6} = 64$ possible
+binary strings of length $6$, of which $2^3 = 8$ are palindromes, whose corresponding leaf nodes would be labelled "accept". 
+There would also need to be an additional "fail" node which acts as a sink node (leads to itself, not labelled "accept") to account for strings of 
+length greater than $6$. 
+
+This model can be refined to use fewer states, namely $1 + 2 + 4 + 8 + 8 + 8 + 8 + 1 = 40$: The first 4 layers are arranged as a binary tree 
+to record the first three symbols in the string, then the next 3 layers check for the palindrome property, skipping to the fail state at layer 8 
+if symmetry is broken. The $8$ states in layer 7 are "accept" states where a palindrome of length $6$ has been recorded.
+
+The graph of a finite state machine is a directed graph which will necessarily contain cycles. Intuitively, the language $L(M)$ of a finite state
+machine $M$ will be infinite if and only if there is a cycle in $M$ containing an "accept" state.
+
+### LQ9. Longest increasing subsequence of a permutation
 
 Suppose $P$ is a permutation on $\\{ 0, 1, \ldots, n − 1 \\}$. We want to know the length of the longest monotonically increasing subsequence.
 That is, the largest $m$ such that there exist monotonically increasing $j_{1}, j_{2}, \ldots, j_{m}$ 
 for which $P(j_{1}), P(j_{2}), \ldots, P(j_{m})$ are also monotonically increasing.
 Describe an algorithm that will determine $m$ using $O(n^{2})$ time and $O(n)$ memory.
 
-### LQ10. 
+### LQ10. $541$ points in a unit circle
 
 Given $541$ points in the interior of a circle of unit radius, show that there must be a subset
 of $10$ points whose diameter (the maximum distance between any pair of points) is less than $\frac{\sqrt{2}}{4}$.
 
-Tags: Pigeonhole principle
+#### LQ10 Solution
+
+By the (generalised) [Pigeonhole principle], it suffices to divide the *interior* of the unit circle into $60$ subsets each with diameter
+less than $\frac{\sqrt{2}}{4}$. Then, given $541$ points within the unit circle, there must be a subset out of these $60$ containing at least
+$10$ points.
+
+It should be noted that the diameter of a square with side length $1$ has diameter equal to $\sqrt{2}$, the length of its diagonals (by Pythagoras'
+theoreom). Therefore, a square with side length $\frac{1}{4}$ will have diameter $\frac{\sqrt{2}}{4}$. We will intersect such small squares with
+the interior of the unit circle to form our $60$ subsets.
+
+Consider the unit circle circumscribed inside a square of side length $2$. We may divide this square into a grid of $64$ squares of side length 
+$\frac{1}{4}$, which will necessarily cover the unit circle. In fact, we may remove the four small corner squares from the grid to obtain
+a set of $60$ small squares of side length $\frac{1}{4}$ which still cover the unit circle. This is because the four small corner squares
+lie completely at a distance at least $\sqrt{2} - \frac{\sqrt{2}}{4} = \frac{3 \sqrt{2}}{4} > 1$ from the center of the circle, 
+and so do not intersect it at all.
+
+References:
+- [Pigeonhole principle]
+
+[Pigeonhole principle]: https://en.wikipedia.org/wiki/Pigeonhole_principle
 
 ### LQ11. Directed hypercube graph
 
