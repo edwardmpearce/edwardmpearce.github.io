@@ -432,7 +432,7 @@ $\frac{1}{\lvert \alpha \rvert} F(\frac{\omega}{\alpha})$.
 When $\alpha = 0$, $f(\alpha t) = f(0)$ is constant with respect to $t$ and we have 
 $$\int_{-\infty}^{\infty} f(\alpha t) e^{-2 \pi i \omega t} dt = f(0) \int_{-\infty}^{\infty} e^{-2 \pi i \omega t} dt = f(0) \delta(\omega)$$
 a multiple of the [Dirac delta function](https://mathworld.wolfram.com/DeltaFunction.html).
-This requires more sophisticed analysis than simple techniques for evaluating [improper integrals](https://en.wikipedia.org/wiki/Improper_integral).
+This requires more sophisticated analysis than simple techniques for evaluating [improper integrals](https://en.wikipedia.org/wiki/Improper_integral).
 See [here](https://en.wikipedia.org/wiki/Fourier_transform) for more properties of the Fourier transform.
 
 Tags: Fourier transform, Calculus, Improper integration
@@ -812,6 +812,147 @@ You are allowed to read the values off the data stream, but you only have $2^{20
 Describe a method for determining which of the two situations, 1 or 2, occurs. 
 Roughly how many data values do you need to read to be confident of your result with a probability of $0.999$? 
 (This is about the $3$ sigma level – $3$ standard deviations of a normal distribution.)
+
+#### LQ2 Initial Ideas and Solution
+
+An example of a 32-bit quantity could be a single 4-byte `unsigned long int` representing an integer ranging from $0$ to $2^{32} - 1$.
+In $2^{20} = 1,048,576$ bytes of memory (i.e. 1MB, which is approximately $1$ million bytes), we could hold $2^{18} = 262144$ many 4-byte
+(a.k.a. 32-bit) quantities.
+
+In scenario 1, each 32-bit quantity would occur equally often with probability $\frac{1}{2^{32}}$ (a discrete uniform distribution).
+Whereas in scenario 2, the uncommon values would occur with probability $x$ and the common values would occur with probability $2^{10} x$.
+As we know half of the values (i.e. $2^{31}$ out of $2^{32}$) are uncommon and the other half are common, we can deduce that 
+$x = \frac{1}{2^{31}(1 + 2^{10})}$.
+
+##### Idea 1. Compare mean and variance
+
+Given suitable time and modest luck, we would be able to distinguish scenario 2 simply by looking at the running mean and variance/standard deviation
+of the received data values and comparing them with the mean $\mu = 2^{31} - \frac{1}{2}$ and variance $\sigma^{2} = \frac{1}{12} (2^{64} - 1)$ of
+a discrete uniform distribution over $2^{32}$ values from scenario 1 (as the null hypothesis). This is because, assuming that the common and uncommon
+values of scenario 2 are chosen at random it is probable that this will introduce noticeable skew into the subsequent distribution, in which case
+the problem becomes a matter of computation/runtime, whilst memory requirements for this method are modest (we don't have to store values for long).
+
+However, the question states that we cannot assume anything about the distribution of more common values in scenario 2, in which case the above 
+method could be compromised if we chose, say, for the even numbers in the range to be more common and the odd numbers to be uncommon (or vice versa),
+since this might lead to similar mean and variance as the uniformly distributed case. For more details on how to keep track of the running mean and
+variance of values from a data stream whilst keeping memory requirements low, see this [Wikipedia article][Algorithms for calculating variance].
+
+##### Idea 2. Hypothesis testing on observed distributions
+
+Given greater memory capacity than provided in the question, we might compare the empirical distribution of observed data values to an idealised 
+uniform distribution (scenario 1) by applying more sophisticated methods such as the [Kolmogorov–Smirnov test] or a [Chi-squared test].
+The former is a quantitative analogue of eyeballing the graphs of the cumulative distribution functions of the sample distribution and the 
+null hypothesis distribution, whilst the latter is the analogue of comparing the (normalised) histogram of a sample with the probability
+density function of the null hypothesis distribution.
+
+The [Kolmogorov–Smirnov test] is a quantitative method for comparing the cumulative distribution functions of two distributions by measuring the 
+largest vertical distance between the two graphs. The CDF of a uniform distribution increases in a linear fashion as $F(k) = \frac{k+1}{2^{32}}$ for 
+$k = 0, 1, \ldots, 2^{32} - 1$, whilst we would expect the empirical CDF in scenario 2 to be much more irregular in its steps. 
+Subject to some simplifying assumptions, to reject the null hypothesis (scenario 1) at the $0.999$ confidence level we would need to see 
+$$\sqrt{n} D_{n} = \sqrt{n} \max_{k}|F_{n}(k) - F(k)| > \sqrt{\frac{1}{2} \log_{e} (\frac{2}{1 - 0.999})} \approx 1.9495$$
+where $F_{n}(k)$ is the empirical distribution function for a sample of size $n$.
+
+We can calculate the [Chi-squared test] statistic $$\chi^{2} = \sum_{k=0}^{2^{32} - 1} \frac{(O_{k} - E_{k})^{2}}{E_{k}}$$
+where $E_{k} = \frac{n}{2^{32}}$ is the expected theoretical frequency of value $k$ from $n$ samples of the uniform distribution of scenario 1, and
+$O_{k}$ is the number of observations of value $k$ (which would mostly be zero for small $n < 2^{31}$). Under the null hypothesis, this test statistic
+would have a chi-square distribution with $2^{32} - 1$ degrees of freedom, or we could divide by this number to obtain a standard normal $z$-test
+statistic under the null hypothesis. As we frequently divide by small numbers in this calculation, there is a risk of loss of precision and/or
+numerical underflow, so the likelihood-ratio significance test statistic (a.k.a. [G-test]) which uses logarithms may be more appropriate:
+$$G = 2 \sum_{k} O_{k} \cdot \log_{e} (\frac{O_{k}}{E_{k}})$$
+
+A key challenge and limitation to the above approaches using frequency tests for uniformity is that, in principle, we should keep track of the counts
+of all $2^{32}$ possible values to perform the calculations, which would require half a gigabyte of memory ($2^{29}$ bytes) to store a bit vector 
+mapping of every possible value, but we only have $2^{20}$ bytes of memory at our disposal. Two possible workarounds include:
+1. Bigger histogram bins - group the $2^{32}$ values into modestly sized bins, which would remain uniformly distributed in scenario 1, when 
+reading/counting the frequency of occurences before performing hypothesis testing. This will effect the expected and actual number items in each bin.
+2. Reach a decision on whether we are in scenario 1 or 2 based on the limited amount of data we can record in a dictionary/hash table of values and
+counts given the memory we have. We can still calculate the KS and Chi-squared test statistics with small sample sizes $n < 2^{18}$ using the 
+knowledge that any values not stored in our counting dictionary have zero frequency. The question in this case is whether the tests will be powerful 
+enough to reject the null hypothesis when we are in scenario 2 (requiring a reasonable number of repeated values before we fill memory capacity).
+
+##### Idea 3. Hypothesis testing on repeat times
+
+These above methods may be somewhat memory intensive given the number of possible data values, so an alternative would be to store a bunch of values
+off the data stream and then measure the times until those values are seen again and/or count the number of repetitions in a given time.
+This alternative method might involve reading relatively more data values from the stream/taking a longer time to reach a conclusion depending on 
+implementation details.
+
+Suppose that we stored $n$ many $32$-bit quantities in memory as keys, using $4n$ bytes and leaving $2^{20} - 4n$ bytes of memory leftover to store
+data on the timing/number of observations of the stored values. 
+
+In scenario 1, each value has probability $\frac{1}{2^{32}}$ of occuring in any given observation, and the expected frequency a given value occurs 
+is once in every $2^{32}$ observations. With a data rate of $10$ Megabytes per second and $4$ bytes per observed value, this means we would expect 
+to see any given value repeated once every $\frac{2^{32}}{10 \cdot 2^{18}} = 1638.4$ seconds, or equivalently $27$ minutes and $18.4$ seconds. 
+
+In scenario 2, the common values have probability $\frac{2^{10}}{2^{31}(1 + 2^{10})} \approx \frac{1}{2^{31}}$ of occuring, 
+whilst the uncommon values have probability $\frac{1}{2^{31}(1 + 2^{10})} \approx \frac{1}{2^{41}}$ of occuring in any given observation.
+Therefore, given a specific commonly occuring data value, we would expect to see it once in every $\frac{2^{31}(1 + 2^{10})}{2^{10}}$ observations,
+or roughly twice as frequently given the same data rate - specifically, once every $820$ seconds ($13$ minutes and $40$ seconds).
+On the other hand, for a given less common data value, we would expect to see it once in every $2^{31}(1 + 2^{10})$ observations on average,
+which translates to an average repeat time $2^{10}$ times larger at $839680$ seconds, or equivalently around $9.72$ days.
+
+In our initial sample of $n$ many $32$-bit quantities, we would expect the common values to occur $2^{10} = 1024$ times more frequently than the
+uncommon values, in accordance with the ratio of their probabilities. Specifically, on average we would expect our sample to consist of 
+$\frac{n}{1025}$ uncommon values and $\frac{1024n}{1025}$ common values. The theoretical expected mean repeat time is actually the same for both 
+scenarios 1 and 2, since $\frac{1024}{1025} \cdot 820 + \frac{1}{1025} \cdot 839680 = 1638.4$ seconds, however we would be able to distinguish these
+two cases by either stopping measurement after about $15$ or $30$ minutes (or equivalently after reading about 9-18GB of data) to avoid the extreme
+outlier waiting times, or otherwise using a different way to measure the distribution of repeat times (mode, median, quartiles/box plot, histogram).
+
+Further analysis into the variance of expected times between occurences of a given value in each scenario is needed to definitively state how much
+data would be required to distinguish between scenario 1 and 2 with confidence probability $0.999$ (mean repeat time $820$ seconds 
+vs. $1640$ seconds). Upon further consideration and reflection, it appears that modelling the number of repetitions observed of 
+values from the stored collection over a fixed time using a [Poisson distribution] would be an ideal way to model the problem.
+The assumption that the number of occurences of a given value is distributed as a Poisson random variable holds, and by independence we may take
+the sum of occurences within a given set to also be Poisson distributed.
+
+Suppose we used the full $2^{20} = 1,048,576$ bytes of memory to store $2^{18} = 262144$ many 4-byte (a.k.a. 32-bit) quantities, and had a few bytes
+of memory left over to keep count of how many subsequent data values read fell into our stored set and do some statistical calculations.
+Then the probability/average event rate of a newly read value being one of the values stored in memory (a.k.a. the rate parameter $\lambda$
+for a single observation) would be $\lambda_{1} = \frac{2^{18}}{2^{32}} = \frac{1}{2^{14}}$ in scenario 1, and 
+$$\lambda_{2} = \frac{2^{18}}{2^{31}} \left( \left( \frac{1024}{1025} \right)^{2} + \left( \frac{1}{1025} \right)^{2} \right) \approx 
+0.998 \cdot \frac{1}{2^{13}}$$ in scenario 2.
+
+If we read $n$ values from the data stream and count the number $X_{n}$ of these which lie in our stored set of $2^{18}$ values, we can model this as 
+a Poisson distributed random variable with rate parameter (also mean and variance) $\lambda_{1} n = \frac{n}{2^{14}}$ in scenario 1, or otherwise
+$\lambda_{2} n \approx \frac{n}{2^{13}}$ in scenario 2. We would like to know for which $n$ are we able to distinguish between 
+$\mathrm{Pois}(\frac{n}{2^{14}})$ and $\mathrm{Pois}(\frac{n}{2^{13}})$ with confidence probability $0.999$. This will occur for sufficiently large 
+$n$ such that there exists an integer $k \ge 0$ for which 
+$$P(X_{n} \le k | X_{n} \sim \mathrm{Pois}(\frac{n}{2^{14}})) \ge 0.999 \text{ and } P(X_{n} > k | X_{n} \sim \mathrm{Pois}(\frac{n}{2^{13}})) \ge 0.999$$
+
+In other words, when there is very little probability of overlap between the two distributions we can distinguish between the two by a sampled value.
+
+For Poisson distributions with sufficiently large rate parameter, say $\lambda > 1000$ (or $\lambda > 10$ with continuity correction), 
+we may reasonably approximate $\mathrm{Pois}(\lambda)$ by the normal distribution $\mathrm{Norm}(\mu = \lambda, \sigma^{2} = \lambda)$ 
+and exploit the fact that $99.73\%$ of the probability density of a normal distribution lies within three standard deviations of the mean.
+Therefore, we wish to find $n$ large enough that $$\frac{n}{2^{14}} + 3 \sqrt{\frac{n}{2^{14}}} \le \frac{n}{2^{13}} - 3 \sqrt{\frac{n}{2^{13}}}$$
+
+We may rearrange this inequality as $\sqrt{n} \ge 2^{7} \cdot 3 \cdot (1 + \sqrt{2}) \approx 927$ to find 
+$n \ge 2^{2 \log_{2}(927)} \approx 2^{19.71} \approx 860000$. Therefore, we can far improve on our previous methods and distinguish between the 
+two scenarios in under $1$ second (assuming fast memory writing and lookup speeds, such as by using statically allocated memory and hashed values)
+as follows:
+
+1. Use $2^{20}$ bytes of memory to store $2^{18}$ many 32-bit quantities as a set $S$. This takes $0.1$ seconds of reading time.
+2. Read an additional $2^{20}$ data values from the stream, taking $0.4$ seconds, and count the number $X$ of these values which lie in $S$.
+3. Either all values occur equally often, in which case $X \sim \mathrm{Pois}(\frac{2^{20} \cdot 2^{18}}{2^{32}}) = \mathrm{Pois}(2^{6})$, or
+   half of the values occur $2^{10}$ times more often than others, in which case $X \sim \mathrm{Pois}(2^{7})$.
+4. Approximate $\mathrm{Pois}(2^{6}) \approx \mathrm{Norm}(64, 8)$ and $\mathrm{Pois}(2^{7}) \approx \mathrm{Norm}(128, 8 \sqrt{2})$ so that 
+   if $X \le 64 + 3 \cdot 8 = 88$ we are scenario 1 (32-bit quantities are uniformly distributed), whereas if $X > 88 < 128 - 3 \cdot 8 \sqrt{2}$
+   we know that half of the values occur $2^{10}$ times more often than others (i.e. scenario 2), with probability at least $0.999$.
+
+Tags: Statistics, Hypothesis testing, uniform distribution, Poisson distribution
+
+References:
+- [Algorithms for calculating variance]
+- [Kolmogorov–Smirnov test]
+- [Chi-squared test]
+- [Frequency tests for uniformity](https://www.eg.bucknell.edu/~xmeng/Course/CS6337/Note/master/node43.html)
+- [Poisson distribution]
+
+[Algorithms for calculating variance]: https://en.wikipedia.org/wiki/Algorithms_for_calculating_variance
+[Kolmogorov–Smirnov test]: https://en.wikipedia.org/wiki/Kolmogorov%E2%80%93Smirnov_test
+[Chi-squared test]: https://en.wikipedia.org/wiki/Chi-squared_test
+[G-test]: https://en.wikipedia.org/wiki/G-test
+[Poisson distribution]: https://en.wikipedia.org/wiki/Poisson_distribution
 
 ### LQ3. Asymptotic number of tilings
 
