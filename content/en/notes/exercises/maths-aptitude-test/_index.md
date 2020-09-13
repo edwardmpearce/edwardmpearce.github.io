@@ -936,7 +936,7 @@ as follows:
 3. Either all values occur equally often, in which case $X \sim \mathrm{Pois}(\frac{2^{20} \cdot 2^{18}}{2^{32}}) = \mathrm{Pois}(2^{6})$, or
    half of the values occur $2^{10}$ times more often than others, in which case $X \sim \mathrm{Pois}(2^{7})$.
 4. Approximate $\mathrm{Pois}(2^{6}) \approx \mathrm{Norm}(64, 8)$ and $\mathrm{Pois}(2^{7}) \approx \mathrm{Norm}(128, 8 \sqrt{2})$ so that 
-   if $X \le 64 + 3 \cdot 8 = 88$ we are scenario 1 (32-bit quantities are uniformly distributed), whereas if $X > 88 < 128 - 3 \cdot 8 \sqrt{2}$
+   if $X \le 64 + 3 \cdot 8 = 88$ we are in scenario 1 (32-bit quantities are uniformly distributed), whereas if $X > 88 < 128 - 3 \cdot 8 \sqrt{2}$
    we know that half of the values occur $2^{10}$ times more often than others (i.e. scenario 2), with probability at least $0.999$.
 
 Tags: Statistics, Hypothesis testing, uniform distribution, Poisson distribution
@@ -959,16 +959,133 @@ References:
 A $2 \times N$ rectangle is to be tiled with $1 \times 1$ and $2 \times 1$ tiles. Prove that the number of
 possible tilings tends to $kx^{N}$ as $N$ gets large. Find $x$, to $2$ decimal places.
 
-#### LQ3 Initial ideas
+#### LQ3 Solution
+
+##### LQ3 Initial Ideas
 
 Does the problem description mean to imply that the $2 \times 1$ tiles must always be placed vertically? Probably not.
+If this was the case, the number of tilings of a $2 \times N$ rectangle would be exactly $2^{N}$ since we could decompose it into $N$ many 
+$2 \times 1$ rectangles, each of which independently permits $2$ possible tilings. We will assume any $2 \times 1$ tiles can be placed either
+horizontally or vertically inside the rectangle, in which case $2^{N}$ now serves as a lower bound to the number of possible tilings.
+
 Once we have proven that the number of possible tilings tends to $kx^{N}$ as $N$ gets large, we could approximate $x$ 
 using the ratio of empirical values. Let $a_{N}$ denote the number of possible tilings of a $2 \times N$ rectangle by 
 $1 \times 1$ and $2 \times 1$ tiles. Then as $N$ gets large we have $\frac{a_{N+1}}{a_{N}} \approx \frac{kx^{N+1}}{kx^{N}} = x$.
 
 It is likely that $a_{N}$ satisfies a recurrence relation, but care will need to be taken to avoid double-counting.
-Any valid tiling can be reflected through the horizontal line passing through the midpoint of the rectangle. This allows us to distinguish between
-symmetric and asymmetric tilings with respect to this reflection.
+
+##### Finding the recurrence relation: Method 1
+
+For $N \ge 3$ there are exactly two tilings of a $2 \times N$ rectangle which cannot be decomposed into separate tilings of a $2 \times k$ rectangle 
+and a $2 \times (N - k)$ rectangle for some $1 \le k \le N-1$. The number of 'irreducible' tilings of a $2 \times 1$ rectangle is also $2$, whilst
+the number of irreducible tilings of a $2 \times 2$ rectangle is $3$.
+
+Many of the tilings of a $2 \times N$ rectangle which are reducible/decomposable could be considered as the concatenation of a $2 \times (N - 1)$ 
+tiling with a $2 \times 1$ tiling, either on the left or on the right. The overlap of these two types of decomposition (which we must avoid double 
+counting) are those which can be decomposed as a $2 \times (N - 2)$ tiling combined with separate $2 \times 1$ tilings on both left and right.
+
+However, this doesn't actually count all decompositions because, for example, we could have a $2 \times 4$ rectangle decomposed into two irreducible 
+$2 \times 2$ tilings. We deduce that $a_{1} = 2$, $a_{2} = 7$, $a_{3} = 22$, and for $N \ge 3$ we have the following lower bound:
+$$a_{N} \ge 2 + a_{1} a_{N-1} + a_{N-1} a_{1} - a_{1} a_{N-2} a_{1} = 2 + 4(a_{N-1} - a_{N-2})$$
+
+Instead, when we know that a $2 \times N$ tiling is reducible, we can split it into a $2 \times k$ *irreducible* tiling and a $2 \times (N - k)$
+arbitrary tiling for some $1 \le k \le N-1$. By also taking into account the irreducible $2 \times N$ tilings, we obtain the following
+reccurence relation for $N \ge 2$: $$a_{N} = a_{N-2} + 2 \sum_{k=0}^{N-1} a_{k}$$ where $a_{0} = 1$. 
+The additional $a_{N-2}$ term comes from the fact that there are $3$ irreducible $2 \times 2$ tilings rather than only $2$.
+
+By considering the next term in the sequence we are able to obtain a homogeneous linear recurrence relation of order 3 with constant coefficients:
+$$a_{N+1} = 3 a_{N} + a_{N-1} - a_{N-2}$$
+
+##### Finding the recurrence relation: Method 2
+
+There is an alternative way to derive the same recurrence relations on the number $a_{N}$ of possible tilings of a $2 \times N$ rectangle by 
+$1 \times 1$ and $2 \times 1$ tiles. Consider a $2 \times N$ rectangle with a $1 \times 1$ corner tile removed, and let $b_{N}$ denote the number
+of tilings of this shape by $1 \times 1$ and $2 \times 1$ tiles. Then $a_{1} = 2$ and $b_{1} = 1$. By partitioning tilings contributing to $a_{N}$
+according to the type and orientation of the tile passing through the top left corner square, when $N \ge 2$ we split the tilings into three subsets:
+1. If the tile passing through the top left corner square is a $1 \times 1$ tile, the corresponding subset of tilings is counted by $b_{N}$.
+2. If the tile passing through the top left corner square is a domino placed vertically, the corresponding subset of tilings is counted by $a_{N-1}$.
+3. If the tile at the top left corner is a horizontal domino, we further break down this subset according to the tile on the bottom left square:
+   1. If additionally the bottom left square contains a $1 \times 1$ tile, the corresponding subset of tilings is counted by $b_{N-1}$.
+   2. Otherwise, if the bottom left square is covered by another horizontal domino, then the corresponding subset of tilings is counted by $a_{N-2}$.
+
+Therefore, for $N \ge 2$ we may write $$a_{N} = b_{N} + a_{N-1} + b_{N-1} + a_{N-2}$$
+
+We may apply a similar analysis on tilings counted by $b_{N}$, partitioning according the tile over the corner square outside the $2 \times (N - 1)$ 
+rectangle, to find that $b_{N} = a_{N - 1} + b_{N - 1}$ for $N \ge 2$. We may apply a telescoping sum to the relation $b_{N} - b_{N - 1} = a_{N - 1}$
+to find that $$a_{N-1} + a_{N-2} + \ldots + a_{1} = \sum_{k=2}^{N} a_{k-1} = \sum_{k=2}^{N} (b_{k} - b_{k-1}) = b_{N} - b_{1} = b_{N} - 1$$
+
+By letting $a_{0} = 1$, we find that $b_{N} = \sum_{k=0}^{N-1} a_{k} = a_{N - 1} + b_{N - 1}$, then we may substitute to find that 
+$$a_{N} = b_{N} + a_{N-1} + b_{N-1} + a_{N-2} = a_{N-2} + 2 \sum_{k=0}^{N-1} a_{k}$$
+Then, once again, $a_{N+1} - a_{N} = 2 a_{N} + a_{N-1} - a_{N-2}$. Thus we obtain the homogeneous linear recurrence relation of order 3 with 
+constant coefficients: $$a_{N+1} - 3 a_{N} - a_{N-1} + a_{N-2} = 0$$
+
+##### Determining asymptotic behaviour
+
+The form of solutions to a homogeneous linear [recurrence relation][Recurrence relation] are well known. 
+If $x_{1}, x_{2}, x_{3}$ are solutions/roots to the auxiliary equation $x^{3} - 3x^{2} - x + 1 = 0$, 
+then we may express $a_{N} = k_{1} x_{1}^{N} + k_{2} x_{2}^{N} + k_{3} x_{3}^{N}$,
+where the coefficients $k_{1}, k_{2}, k_{3}$ are such that the initial conditions $a_{0} = 1, a_{1} = 2, a_{2} = 7$ are satisfied.
+
+We now proceed to analyse the auxiliary equation $p(x) = x^{3} - 3x^{2} - x + 1 = 0$ and its roots.
+Consider that $p(-1) = -2$, $p(0) = 1$, $p(1) = -2$, $p(2) = -5$, $p(3) = -2$, $p(4) = 13$. By using the intermediate value theorem, or
+knowledge of the shape of a cubic polynomial, we can conclude that the three roots of $p$ can be ordered 
+$-1 < x_{3} < 0 < x_{2} < 1 < 3 < x_{1} < 4$. In particular, since $0 < |x_{2}|, |x_{3}| < 1$ we have 
+$\lim_{N \to \infty} (k_{2} x_{2}^{N} + k_{3} x_{3}^{N}) = 0$, so $a_{N} \to k_{1} x_{1}^{N}$ as $N$ gets large, as required.
+
+It remains to approximate the root $3 < x_{1} < 4$ to the cubic polynomial $p(x) = x^{3} - 3x^{2} - x + 1$. 
+One way to do this is to proceed with the divide and conquer strategy of repeatedly evaluating $p(x)$ and using the intermediate value theorem to
+obtain successively tighter bounds on $x_{1}$. 
+
+| $x$                        | $\mathrm{sign}(p(x))$ | Lower bound                   | Upper bound                    |
+|----------------------------|-----------------------|-------------------------------|--------------------------------|
+| $3$                        | Negative              | $3$                           |                                |
+| $4$                        | Positive              | $3$                           | $4$                            |
+| $3.5$                      | Positive              | $3$                           | $3.5$                          |
+| $3.25$                     | Positive              | $3$                           | $3.25$                         |
+| $3.125$                    | Negative              | $3.125$                       | $3.25$                         |
+| $3.1875$                   | Negative              | $3.1875$                      | $3.25$                         |
+| $\frac{103}{32} = 3.21875$ | Positive              | $3.1875$                      | $3.21875$                      |
+| $\frac{205}{64}$           | Negative              | $3.203125$                    | $3.21875$                      |
+| $\frac{411}{128}$          | Negative              | $3.2109375$                   | $3.21875$                      |
+| $\frac{823}{256}$          | Positive              | $3.2109375 = \frac{411}{128}$ | $3.21484375 = \frac{823}{256}$ |
+
+Therefore, the number of possible tilings of a $2 \times N$ rectangle by $1 \times 1$ and $2 \times 1$ tiles tends to $kx^{N}$ as $N$ gets large,
+where $x$ is the largest root of the cubic polynomial $p(x) = x^{3} - 3x^{2} - x + 1$. We have deduced that 
+$\frac{411}{128} = 3.2109375 < x < 3.21484375 = \frac{823}{256}$, and so $x \approx 3.21$ to $2$ decimal places.
+
+A quicker way to approximate the desired root of $p(x) = 0$ would be to use the [Newton–Raphson method] which converges at least quadratically
+for a root of multiplicity $1$ (i.e. not a repeated root) in a neighbourhood of the root, which intuitively means that the number of correct digits 
+roughly doubles in every step. The Newton-Raphson iteration step is 
+$$
+x_{n+1} = x_{n} - \frac{p(x_{n})}{p'(x_{n})} = x_{n} - \frac{x_{n}^{3} - 3x_{n}^{2} - x_{n} + 1}{3x_{n}^{2} - 6x_{n} - 1} = 
+\frac{2x_{n}^{3} - 3x_{n}^{2} - 1}{3x_{n}^{2} - 6x_{n} - 1}
+$$
+and we will use an initial approximation $x_{0} = 3$. Then $x_{1} = \frac{13}{4} = 3.25$, $x_{2} = \frac{1151}{358} = 3.2150838...$,
+and $x_{3} = 3.21432...$, with $x_{4} = 3.214319743...$ stabilising up to the precision on a typical handheld calculator.
+Therefore, $x \approx 3.21$ to $2$ decimal places, and $x \approx 3.214319743$ to $9$ decimal places.
+
+With a little further calculation, we can show that the solution to $a_{N+1} = 3 a_{N} + a_{N-1} - a_{N-2}$ where $a_{0} = 1, a_{1} = 2, a_{2} = 7$
+is $a_{N} = k_{1} x_{1}^{N} + k_{2} x_{2}^{N} + k_{3} x_{3}^{N}$ where, up to around 10 significant figures, we have:
+
+| $i$ | $x_{i}$         | $x_{i}^{2}$    | $k_{i}$         |
+|-----|-----------------|----------------|-----------------|
+| $1$ | $3.214319743$   | $10.33185141$  | $0.6645913847$  |
+| $2$ | $0.4608111272$  | $0.212346895$  | $0.07943671576$ |
+| $3$ | $-0.6751308706$ | $0.4558016924$ | $0.2559718995$  |
+
+When it comes to calculating actual values of $a_{N}$, the recurrence formula is faster and more accurate, requiring fewer and simpler operations
+whilst ensuring no loss of precision/integer output at each iteration. The asymptotic behaviour $a_{N} \approx O(3.21^{N})$ is useful to know if
+we are iterating over tilings of a $2 \times N$ rectangle by $1 \times 1$ and $2 \times 1$ tiles as part of a larger algorithm.
+
+Tags: Recurrence relation, Numerical analysis
+
+References:
+- [Recurrence relation]
+- [Newton–Raphson method]
+- [Vandermonde matrix](https://en.wikipedia.org/wiki/Vandermonde_matrix)
+
+[Recurrence relation]: https://en.wikipedia.org/wiki/Recurrence_relation
+[Newton–Raphson method]: https://en.wikipedia.org/wiki/Newton%27s_method
 
 ### LQ4. Prime Power Divisors
 
@@ -993,6 +1110,7 @@ Tags: Number theory, prime factors
 
 Related Reading:
 - [Multiplicative function (number theory)](https://en.wikipedia.org/wiki/Multiplicative_function)
+- [Fixed point (mathematics)](https://en.wikipedia.org/wiki/Fixed_point_(mathematics))
 
 ### LQ5. Parameters of a PRNG
 
@@ -1064,6 +1182,20 @@ Describe how to find efficiently a diagonal (that is, a line joining 2 vertices)
 Repeated application of this process will completely triangulate the interior of the polygon. 
 Estimate the worst case number of arithmetic operations needed to complete the triangulation.
 
+#### LQ6 Initial Ideas and Discussion
+
+A non-intersecting closed polygon with $n$ vertices can be triangulated by $n-3$ diagonals.
+By proceeding through the set of vertices cyclically (i.e. by taking indices modulo $n$), we check whether we can construct a valid diagonal
+from $P_{k}$ to $P_{k+2}$, starting from $k = 1$. If we cannot, we increment $k$ by $1$ and try again (see if there is a valid diagonal from 
+$P_{k+1}$ to $P_{k+3}$). However, if we can draw a diagonal from $P_{k}$ to $P_{k+2}$ that lies entirely in the interior of the polygon, 
+we add $(P_{k}, P_{k+2})$ to a list of vertex pairs describing diagonals in our triangulation, and remove $P_{k+1}$ from the list of
+vertices we consider for new diagonals and from the list of vertices we check when determining whether a diagonal is valid (i.e. repeat the process
+of triangulation on the the list of $n-1$ ordered points with $P_{k+1}$ removed), restarting the process at vertex $k+2$.
+
+It remains to describe a method to verify whether the line segment between vertices $P_{k}$ and $P_{k+2}$ lies within the interior of a polygon.
+Initial thoughts include checking whether the line separates $P_{k+1}$ from the remaining vertices, by checking a line or dot product inequality,
+but this may be a sufficient but not necessary condition; or reasoning based on the angles between triplets of points $(P_{k}, P_{k+1}, P_{k+2})$.
+
 ### LQ7. Semigroups
 
 A *semigroup* is a set $S$ with an associative operation, which we will write as multiplication.
@@ -1111,7 +1243,7 @@ for which the last $3$ symbols are a reflection of the first $3$).
 $n$ or less grows linearly with $n$.
 3. Show that there is no machine such that $L(M)$ consists of all twice-repeated strings.
 
-#### LQ8 Partial Solution
+#### LQ8 Solution
 
 For part 1, my initial idea was to imagine a finite state machine $M$ which could be visualized somewhat like a perfect binary tree of depth $7$ 
 with a few adjustments. The initial state would be at the root of the tree, each branch would encode one of the $2^{6} = 64$ possible
@@ -1123,8 +1255,42 @@ This model can be refined to use fewer states, namely $1 + 2 + 4 + 8 + 8 + 8 + 8
 to record the first three symbols in the string, then the next 3 layers check for the palindrome property, skipping to the fail state at layer 8 
 if symmetry is broken. The $8$ states in layer 7 are "accept" states where a palindrome of length $6$ has been recorded.
 
-The graph of a finite state machine is a directed graph which will necessarily contain cycles. Intuitively, the language $L(M)$ of a finite state
-machine $M$ will be infinite if and only if there is a cycle in $M$ containing an "accept" state.
+The graph of a finite state machine is a directed graph which will necessarily contain cycles. A sufficient condition for a finite state machine $M$ 
+to have a language $L(M)$ of infinite size is to require that there is a cycle in $M$ containing an "accept" state. However this is not strictly
+required.
+
+An example of a finite state machine $M$ for which its language $L(M)$ is not finite is when $M$ consists of only one state $s$, which is necessarily
+the initial state, but we also specify that $s$ is an accepting state. Then $L(M)$ consists of all binary strings of finite length (all strings are
+accepted). The number of strings in $L(M)$ of length $n$ or less is equal to the number of binary strings of length $n$ or less, which is
+$\sum_{k=0}^{n} 2^{k} = 2^{n+1} - 1$. This is not linear growth with $n$, but in fact exponential growth with $n$.
+
+To show that there is no finite state machine $M$ such that its language $L(M)$ consists of all twice-repeated strings consider the following:
+Let $n > 0$ and let $w_{1}$, $w_{2}$ be two distinct binary strings of length $n$. Let $s(w_{1})$ and $s(w_{2})$ be the states in $M$ we reach 
+if we follow the path from the initial state by reading $w_{1]$ and w_{2}$ respectively. Now consider the states in $M$ associated with reading
+the concatenated strings $w_{1} w_{1}$ and $w_{2} w_{1}$. By definition of the language $L(W)$ we know that $s(w_{1} w_{1})$ is an accepting state,
+whilst $s(w_{2} w_{1})$ is not an accepting state as $w_{2} w_{1}$ is a binary string of length $2n$ which cannot be expressed as a twice-repeated 
+string (which would necessarily be of length $n$). Therefore $s(w_{1} w_{1}) \neq s(w_{2} w_{1})$. It follows that $s(w_{1}) \neq s(w_{2})$ because
+otherwise we could start at the same state $s(w_{1}) = s(w_{2})$ and move through the graph following the same path according to $w_{1}$, but end
+up at different states $s(w_{1} w_{1}) \neq s(w_{2} w_{1})$.
+
+We have shown that for any $n > 0$, distinct words $w_{1}$, $w_{2}$ of length $n$ must each occupy distinct states $s(w_{1})$, $s(w_{2})$ in $M$,  
+since they are distinguished by $w_{1}$. As there are $2^{n}$ binary strings of length $n$, it follows that $M$ has at least $2^{n}$ states,
+but this applies for all $n > 0$ and there is no finite number which is greater than $2^{n}$ for all $n > 0$. Therefore there can be no finite state
+machine $M$ whose language $L(M)$ consists of all twice-repeated strings. 
+
+The above line of reasoning is closely related to the [Myhill–Nerode theorem], which provides a necessary and sufficient condition for a language 
+to be regular (that is, arising as the language associated to some finite state machine $M$).
+
+References:
+- [Finite-state machine]
+- [Myhill–Nerode theorem]
+- [Deterministic finite automaton]
+- [DFA minimization]
+
+[Finite-state machine]: https://en.wikipedia.org/wiki/Finite-state_machine
+[Myhill–Nerode theorem]: https://en.wikipedia.org/wiki/Myhill%E2%80%93Nerode_theorem
+[Deterministic finite automaton]: https://en.wikipedia.org/wiki/Deterministic_finite_automaton
+[DFA minimization]: https://en.wikipedia.org/wiki/DFA_minimization
 
 ### LQ9. Longest increasing subsequence of a permutation
 
