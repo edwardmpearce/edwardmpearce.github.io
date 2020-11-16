@@ -1218,6 +1218,25 @@ It remains to describe a method to verify whether the line segment between verti
 Initial thoughts include checking whether the line separates $P_{k+1}$ from the remaining vertices, by checking a line or dot product inequality,
 but this may be a sufficient but not necessary condition; or reasoning based on the angles between triplets of points $(P_{k}, P_{k+1}, P_{k+2})$.
 
+It turns out this is the beginning of an implementation of a [polygon triangulation][Polygon triangulation] algorithm known as the ear clipping
+method. This can run in
+
+References:
+
+- [Polygon triangulation]
+- [Simple polygon]
+- [Two ears theorem]
+- [Monotone polygon]
+- [Triangulating a simple polygon in linear time]
+- [Bernard Chazelle]
+
+[Polygon triangulation]: https://en.wikipedia.org/wiki/Polygon_triangulation
+[Simple polygon]: https://en.wikipedia.org/wiki/Simple_polygon
+[Two ears theorem]: https://en.wikipedia.org/wiki/Two_ears_theorem
+[Monotone polygon]: https://en.wikipedia.org/wiki/Monotone_polygon
+[Triangulating a simple polygon in linear time]: https://link.springer.com/article/10.1007/BF02574703
+[Bernard Chazelle]: https://en.wikipedia.org/wiki/Bernard_Chazelle
+
 ### LQ7. Semigroups
 
 A *semigroup* is a set $S$ with an associative operation, which we will write as multiplication.
@@ -1323,6 +1342,19 @@ Suppose $P$ is a permutation on $\\{ 0, 1, \ldots, n − 1 \\}$. We want to know
 That is, the largest $m$ such that there exist monotonically increasing $j_{1}, j_{2}, \ldots, j_{m}$
 for which $P(j_{1}), P(j_{2}), \ldots, P(j_{m})$ are also monotonically increasing.
 Describe an algorithm that will determine $m$ using $O(n^{2})$ time and $O(n)$ memory.
+
+#### LQ9 Solution
+
+This question can be interpreted in terms of the [Longest common subsequence problem] between the sequences
+$(0, \ldots, n - 1)$ and $(P(0), \ldots, P(n - 1))$.
+
+References:
+
+- [Longest common subsequence problem]
+
+[Longest common subsequence problem]: https://en.wikipedia.org/wiki/Longest_common_subsequence_problem
+
+Tags: Dynamic programming
 
 ### LQ10. $541$ points in a unit circle
 
