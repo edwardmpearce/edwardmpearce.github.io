@@ -5,8 +5,7 @@ summary = "Translations of technical terms from mathematics and computer science
 date = 2019-10-15T00:00:00
 lastmod = 2019-10-15T00:00:00
 
-markup = "mmark"
-draft = false  # Is this a draft? true/false
+draft = true  # Is this a draft? true/false
 
 +++
 
