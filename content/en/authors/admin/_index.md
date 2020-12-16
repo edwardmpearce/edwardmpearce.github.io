@@ -73,10 +73,10 @@ interests = [
 [[social]]
    icon = "cv"
    icon_pack = "ai"
-   link = "../files/cv20191018.pdf"
+   link = "../files/encv20200914_twopage.pdf"
 
 +++
 
-I am a PhD student and tutorial demonstrator in the School of Mathematics and Statistics at The University of Sheffield. I study interactions between algebraic geometry and combinatorics, in particular understanding topological properties of orbifold Hilbert schemes via core and quotient partitions and G-constellations. 
+I am a PhD student and tutorial demonstrator in the School of Mathematics and Statistics at The University of Sheffield. I study interactions between algebraic geometry and combinatorics, in particular understanding topological properties of orbifold Hilbert schemes via core and quotient partitions and G-constellations.
 
 My broader academic interests include machine learning, its interplay with mathematics and statistics, and applications to data science. I have working experience in data analysis using Python, SQL, and mongoDB.

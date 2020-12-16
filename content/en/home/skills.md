@@ -15,20 +15,20 @@ subtitle = ""
 [[feature]]
   icon = "chalkboard-teacher"
   icon_pack = "fas"
-  name = "Teacher"
-  description = "I am a teacher and a communicator, explaining technical concepts to students of all backgrounds and ages. I have given lectures and seminars, and led tutorials and coding sessions, both professionally and as a volunteer."
+  name = "Teaching"
+  description = "I am a teacher and a communicator, explaining technical concepts to students of all backgrounds and ages. I have given lectures and seminars, and led tutorials and coding sessions, both professionally and as a volunteer. <br><br> See my [teaching](./teaching/) page for testimonials, prepared lecture materials, and a list of past teaching responsibilities."
 
 [[feature]]
   icon = "python"
   icon_pack = "fab"
-  name = "Python user"
-  description = "I am proficient in Python and key packages which form the basis of the data scientist's toolkit (pandas, scikit-learn, Tensorflow). I have completed projects involving web scraping, data analysis and interfacing with SQL and mongoDB."
+  name = "Python"
+  description = "I am proficient in using Python's standard library and key packages from Python's data science stack including numpy, pandas, matplotlib, Plotly, scikit-learn, and Tensorflow. <br> I have completed projects in a working context involving web scraping, data analysis, visualization, hypothesis testing, and management of SQL and mongoDB databases. <br><br> See the following [GitHub repo](https://github.com/edwardmpearce/adventofcode) for a showcase of problem solving using Python."
   
 [[feature]]
   icon = "laptop-code"
   icon_pack = "fas"
-  name = "Programmer"
-  description = "I solve problems using software tools, including version control (git), web development, database management, numerical programming (Matlab, Sage), and cloud computing (Collab, CoCalc)."
+  name = "Software Engineering"
+  description = "I have experience across multiple languages and tools spanning the whole software development cycle, including source code management, continuous integration and deployment workflows (GitHub actions, Travis, Docker) for applications such as automated testing and website building, scientific programming in C, and optimisation for GPUs with CUDA. <br><br> See my CV ([English](../files/encv20200914_twopage.pdf), [Chinese](../files/zhcv20200324.pdf)) for a list of highlighted projects."
   
 #[[feature]]
 #  icon = "r-project"
