@@ -15,6 +15,10 @@ draft: false  # Is this a draft? true/false
 
 {{< figure src="TeachingTestimonial_Dolan.png" title="[Teaching Testimonal](TeachingTestimonial_Dolan.pdf) from Dr Sam Dolan, Senior Lecturer, School of Mathematics and Statistics, The University of Sheffield" lightbox="true" >}}
 
+## Prepared lecture materials
+
+- [Teaching Talk on Taylor's Theorem](TeachingTalk_TaylorTheorem.pdf) for Xi'an Jiaotong-Liverpool University (XJTLU)
+
 ## University Teaching Responsibilities
 
 ### The University of Sheffield
