@@ -28,7 +28,7 @@ subtitle = ""
   icon = "laptop-code"
   icon_pack = "fas"
   name = "Software Engineering"
-  description = "I have experience across multiple languages and tools spanning the whole software development cycle, including source code management, continuous integration and deployment workflows (GitHub actions, Travis, Docker) for applications such as automated testing and website building, scientific programming in C, and optimisation for GPUs with CUDA. <br><br> See my CV ([English](../files/encv20210104_twopage.pdf), [Chinese](../files/zhcv20200324.pdf)) for a list of highlighted projects."
+  description = "I have experience across multiple languages and tools spanning the whole software development cycle, including source code management, continuous integration and deployment workflows (GitHub actions, Travis, Docker) for applications such as automated testing and website building, scientific programming in C, and optimisation for GPUs with CUDA. <br><br> See my CV ([English](../files/encv20210607_twopage.pdf), [Chinese](../files/zhcv20200324.pdf)) for a list of highlighted projects."
   
 #[[feature]]
 #  icon = "r-project"
