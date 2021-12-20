@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MA243 Exercises | Edward Pearce</title>
+    <link>https://edwardmpearce.github.io/notes/exercises/ma243geometry/</link>
+      <atom:link href="https://edwardmpearce.github.io/notes/exercises/ma243geometry/index.xml" rel="self" type="application/rss+xml" />
+    <description>MA243 Exercises</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Copyright © Edward Pearce 2021</copyright><lastBuildDate>Mon, 08 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://edwardmpearce.github.io/img/site-feature-image.png</url>
+      <title>MA243 Exercises</title>
+      <link>https://edwardmpearce.github.io/notes/exercises/ma243geometry/</link>
+    </image>
+    
+  </channel>
+</rss>

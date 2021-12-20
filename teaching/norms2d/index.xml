@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Norms in the real plane | Edward Pearce</title>
+    <link>https://edwardmpearce.github.io/teaching/norms2d/</link>
+      <atom:link href="https://edwardmpearce.github.io/teaching/norms2d/index.xml" rel="self" type="application/rss+xml" />
+    <description>Norms in the real plane</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Copyright © Edward Pearce 2021</copyright><lastBuildDate>Thu, 11 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://edwardmpearce.github.io/img/site-feature-image.png</url>
+      <title>Norms in the real plane</title>
+      <link>https://edwardmpearce.github.io/teaching/norms2d/</link>
+    </image>
+    
+  </channel>
+</rss>

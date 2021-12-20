@@ -1,0 +1,972 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Edward Pearce">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Notes from Algebraic Geometry Seminar, Autumn Semester 2019-2020 at The University of Sheffield">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://edwardmpearce.github.io/notes/seminar_notes/partitions_hilbert_schemes/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#3f51b5">
+  
+
+  
+  
+  
+  <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/solarized-dark.min.css" crossorigin="anonymous" title="hl-light">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/solarized-dark.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+      
+    
+
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+  
+
+  
+  <link rel="alternate" href="/notes/seminar_notes/partitions_hilbert_schemes/index.xml" type="application/rss+xml" title="Edward Pearce">
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu4912a2c2ee64ba53d4781b623d1f1db1_382516_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu4912a2c2ee64ba53d4781b623d1f1db1_382516_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="https://edwardmpearce.github.io/notes/seminar_notes/partitions_hilbert_schemes/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@edwardmpearce">
+  <meta property="twitter:creator" content="@edwardmpearce">
+  
+  <meta property="og:site_name" content="Edward Pearce">
+  <meta property="og:url" content="https://edwardmpearce.github.io/notes/seminar_notes/partitions_hilbert_schemes/">
+  <meta property="og:title" content="Partitions and Hilbert schemes | Edward Pearce">
+  <meta property="og:description" content="Notes from Algebraic Geometry Seminar, Autumn Semester 2019-2020 at The University of Sheffield"><meta property="og:image" content="https://edwardmpearce.github.io/img/site-feature-image.png">
+  <meta property="twitter:image" content="https://edwardmpearce.github.io/img/site-feature-image.png"><meta property="og:locale" content="en-us">
+  
+    <meta property="og:updated_time" content="2019-10-01T00:00:00&#43;00:00">
+  
+
+  
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Partitions and Hilbert schemes | Edward Pearce</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Edward Pearce</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Edward Pearce</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/activities/"><span>Activities</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/post/"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/teaching/"><span>Teaching</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/research/"><span>Research</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/notes/"><span>Notes</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link js-theme-selector" data-toggle="dropdown" aria-haspopup="true">
+          <i class="fas fa-palette" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+<div class="universal-wrapper pt-3">
+  <h1>Partitions and Hilbert schemes</h1>
+
+  
+
+  
+</div>
+
+
+
+<div class="universal-wrapper">
+  
+  <div class="article-style"><p>Lecture given by Paul Johnson, notes taken by Edward Pearce, 01/10/2019, 12pm-1pm at The University of Sheffield.</p>
+
+<h2 id="relation-to-representation-theory">Relation to Representation theory</h2>
+
+<table>
+<thead>
+<tr>
+<th align="center">Topology of <span  class="math">\(\mathrm{Hilb}(S)\)</span></th>
+<th align="center">Representation of some algebra</th>
+<th align="center">Quiver varieties</th>
+<th align="center">Partitions</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">Cohomology <span  class="math">\(H^{\ast}\)</span></td>
+<td align="center">Heisenberg algebra</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+
+<tr>
+<td align="center">Homology <span  class="math">\(H_{\ast}\)</span></td>
+<td align="center">Virasoro algebra</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+
+<tr>
+<td align="center">K-theory <span  class="math">\(K\)</span></td>
+<td align="center">Hall algebra</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+
+<tr>
+<td align="center">Derived Category <span  class="math">\(\mathcal{D}\)</span></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="partitions">Partitions</h2>
+
+<p>For a partition <span  class="math">\(\lambda=(5,3,3,2,1,1)\)</span>, the size of <span  class="math">\(\lambda\)</span>, denoted <span  class="math">\(|\lambda|\)</span>, is the sum of its parts, here 15, and the length of <span  class="math">\(\lambda\)</span>, denoted <span  class="math">\(\ell(\lambda)\)</span>, is the number of parts, here 6.</p>
+
+<p>Let <span  class="math">\(\mathcal{P}\)</span> denote the set of all partitions, and <span  class="math">\(\mathcal{P}(n)\)</span> denote the set of partitions of (size) <span  class="math">\(n\)</span>.</p>
+
+<h3 id="first-theorem-of-partitions-euler-product-formula">First theorem of partitions: Euler product formula</h3>
+
+<p><span  class="math">\[\sum_{\lambda\in\mathcal{P}}q^{|\lambda|}t^{\ell(\lambda)}=\prod_{m\ge1}\frac{1}{1-tq^{m}}=:\frac{1}{(t;q)_{\infty}}\]</span></p>
+
+<p>where we call <span  class="math">\((t;q)_{\infty}\)</span> the Pochammer symbol.</p>
+
+<p>We define the arm and leg of a cell/box in a partition, and the hook length of a cell as <span  class="math">\(h(\square)=1+a(\square)+l(\square)\)</span>.</p>
+
+<p>From the representation theory of symmetric groups, we get the hook length formula</p>
+
+<p><span  class="math">\[\dim\lambda=\frac{|\lambda|!}{\prod_{\square\in\lambda}h(\square)}\]</span></p>
+
+<h3 id="cores-and-quotients">Cores and quotients</h3>
+
+<p>Define the <span  class="math">\(r\)</span>-hook dimension of a partition <span  class="math">\(\lambda\)</span> to be</p>
+
+<p><span  class="math">\[h_{r}(\lambda):=|\{\square\in\lambda:a(\square)>0, h(\square)\equiv0\bmod r\}|\]</span></p>
+
+<p>We call a partition <span  class="math">\(\lambda\)</span> an $r$-core if <span  class="math">\(r\)</span> does not divide <span  class="math">\(h(\square)\)</span>, i.e. <span  class="math">\(r\nmid h(\square)\)</span>, for any <span  class="math">\(\square\in\lambda\)</span>. Consequently, for <span  class="math">\(\lambda\)</span> an <span  class="math">\(r\)</span>-core, <span  class="math">\(h_{r}(\lambda)=0\)</span>.</p>
+
+<p>The generating function involving <span  class="math">\(h_{r}(\lambda)\)</span> can be expressed using the following product formula</p>
+
+<p><span  class="math">\[\sum_{\lambda\in\mathcal{P}}q^{|\lambda|}t^{h_{r}(\lambda)}=\prod_{m\ge1}\frac{(1-q^{rm})^{r}}{1-q^{m}}\cdot\frac{1}{(1-q^{rm}t^{m-1})(1-q^{rm}t^{m})^{r-1}}\]</span></p>
+
+<p>where the factor <span  class="math">\(\frac{(1-q^{rm})^{r}}{1-q^{m}}\)</span> corresponds to the generating function for <span  class="math">\(r\)</span>-cores.</p>
+
+<h3 id="generalized-cores">Generalized cores</h3>
+
+<p>Let <span  class="math">\(0 < k < r\)</span> be coprime integers, and define the <span  class="math">\(k/r\)</span>-hook dimension of a partition <span  class="math">\(\lambda\)</span> to be</p>
+
+<p><span  class="math">\[h_{k/r}(\lambda):=|\{\square\in\lambda:a(\square)>0, ka(\square)-l(\square)-1\equiv0\bmod r)\}|\]</span></p>
+
+<p>This is a generalization of the previous hook dimension since <span  class="math">\(h_{(r-1)/r}=h_{r}\)</span>.</p>
+
+<p>Define the <span  class="math">\(k/r\)</span>-hook dimension generating function to be</p>
+
+<p><span  class="math">\[G_{k/r}=\sum_{\lambda\in\mathcal{P}}q^{|\lambda|}t^{h_{k/r}(\lambda)}\]</span></p>
+
+<p>Gusein-Zade, Luengo, and Melle-Hernandez conjectured a product formula for the following case:</p>
+
+<p><span  class="math">\[G_{1/3}=\frac{1}{(q;q^{3}t)_{\infty}}\cdot\frac{1}{(q^{2}t;q^{3}t)_{\infty}}\cdot\frac{1}{(q^{3};q^{3}t)_{\infty}}=\big(\frac{1}{1-q}\frac{1}{1-q^{2}t}\frac{1}{1-q^{3}}\big)\big(\frac{1}{1-q^{4}t}\frac{1}{1-q^{5}t^{2}}\frac{1}{1-q^{6}t}\big)\ldots\]</span></p>
+
+<p>This summer Johnson and Rennemo proved a general product formula for <span  class="math">\(G_{k/r}\)</span>.</p>
+
+<h2 id="hilbert-schemes">Hilbert schemes</h2>
+
+<p>Definition: <span  class="math">\(\mathrm{Hilb}_{n}(\mathbb{C}^{2})=\{I\vartriangleleft R:\dim_{\mathbb{C}}R/I=n\}\)</span> where <span  class="math">\(R=\mathbb{C}[x, y]\)</span>.</p>
+
+<p>If <span  class="math">\(I\)</span> is a reduced ideal, then we can interpret <span  class="math">\(R/I\)</span> as functions vanishing on <span  class="math">\(n\)</span> points in <span  class="math">\(\mathbb{C}^{2}\)</span>. Therefore we may identify the reduced Hilbert scheme of <span  class="math">\(n\)</span> points on the complex plane with the smooth locus of <span  class="math">\(\mathbb{C}^{2n}/S_{n}\)</span>. That is,</p>
+
+<p><span  class="math">\[\mathrm{Hilb}_{n}^{\text{red}}(\mathbb{C}^{2})\cong\big(\mathbb{C}^{2n}\setminus\{p_{i}=p_{j}\}\big)/S_{n}=\big(\mathbb{C}^{2n}/S_{n}\big)_{\text{smooth}}\]</span></p>
+
+<p>If points collide, then <span  class="math">\(\mathbb{C}^{2n}/S_{n}\)</span> becomes singular, and <span  class="math">\(\mathrm{Hilb}\)</span> fixes this by taking a resolution of singularities.</p>
+
+<h3 id="example-mathrmhilb2mathbbc2">Example <span  class="math">\(\mathrm{Hilb}_{2}(\mathbb{C}^{2})\)</span></h3>
+
+<p>Consider the family of ideals</p>
+
+<p><span  class="math">\[I_{t}=(x,y)\cap(x-at,y-bt)=(x^{2}-axt,xy-bxt,xy-ayt,y^{2}-byt)\]</span></p>
+
+<p>which represent two points in <span  class="math">\(\mathbb{C}^{2}\)</span> which get closer and closer as $t$ tends to $0$.</p>
+
+<p>If we naively take the limit <span  class="math">\(t=0\)</span>, we would obtain <span  class="math">\(I_{0}=(x^{2},xy,y^{2})\)</span>, but then <span  class="math">\(\dim_{\mathbb{C}}R/I_{0}=3\ne2\)</span>, so <span  class="math">\(I_{0}\notin\mathrm{Hilb}_{2}(\mathbb{C}^{2})\)</span>.</p>
+
+<p>However, since <span  class="math">\(ayt-bxt=(ay-bx)t\in I_{t}\)</span> for all $t$ it follows that <span  class="math">\(ay-bx\in I_{t}\)</span> for all $t$, and indeed for <span  class="math">\(I_{0}'=(x^{2},xy,y^{2}, ay-bx)\)</span> we have <span  class="math">\(\dim_{\mathbb{C}}R/I_{0}'=2\)</span> and so <span  class="math">\(I_{0}'\in\mathrm{Hilb}_{2}(\mathbb{C}^{2})\)</span>.</p>
+
+<p>Therefore, in the case of points colliding, the Hilbert scheme retains extra information (the tangent direction of collision) which resolves the singularities along the diagonal of <span  class="math">\(\mathbb{C}^{2n}/S_{n}\)</span>.</p>
+
+<h3 id="facts-about-mathrmhilbnmathbbc2">Facts about <span  class="math">\(\mathrm{Hilb}_{n}(\mathbb{C}^{2})\)</span></h3>
+
+<h4 id="hilbertchow-morphism">Hilbert-Chow morphism</h4>
+
+<p><span  class="math">\(\pi:\mathrm{Hilb}_{n}(\mathbb{C}^{2})\to\mathbb{C}^{2n}/S_{n}\)</span> is a crepent resolution of singularities, which means that <span  class="math">\(\pi^{\ast}(K_{\mathbb{C}^{2n}/S_{n}})=K_{\mathrm{Hilb}_{n}(\mathbb{C}^{2})}\)</span>. In other words, the pullback along <span  class="math">\(\pi\)</span> of the canonical bundle of <span  class="math">\(\mathbb{C}^{2n}/S_{n}\)</span> is equal to the canonical bundle of <span  class="math">\(\mathrm{Hilb}_{n}(\mathbb{C}^{2})\)</span>.</p>
+
+<h4 id="cohomology-of-mathrmhilbnmathbbc2">Cohomology of <span  class="math">\(\mathrm{Hilb}_{n}(\mathbb{C}^{2})\)</span></h4>
+
+<p>The Euler characteristic of <span  class="math">\(\mathrm{Hilb}_{n}(\mathbb{C}^{2})\)</span> is equal to the number of partitions of size <span  class="math">\(n\)</span>. That is</p>
+
+<p><span  class="math">\[\chi(\mathrm{Hilb}_{n}(\mathbb{C}^{2}))=p(n)\]</span></p>
+
+<p>An algebraic torus <span  class="math">\(T=(\mathbb{C}^{\times})^{2}\)</span> acts on the complex plane <span  class="math">\(\mathbb{C}^{2}\)</span> and hence on <span  class="math">\(\mathrm{Hilb}_{n}(\mathbb{C}^{2})\)</span>.</p>
+
+<p>The fixed points of this action are the monomial ideals in <span  class="math">\(\mathbb{C}[x,y]\)</span>, which are of the form <span  class="math">\(I=(x^{a_{i}}y^{b_{i}})\)</span> for a finite set of non-negative integer pairs <span  class="math">\((a_{i},b_{i})\)</span>, and these in turn are in bijection with the set of partitions of size <span  class="math">\(n\)</span>.</p>
+
+<p>Using Białynicki-Birula decomposition (algebraic Morse theory), we can compute</p>
+
+<p><span  class="math">\[\sum_{k}h_{k}(\mathrm{Hilb}_{n}(\mathbb{C}^{2}))\cdot t^{k}=\sum_{\text{fixed points partitions}}t^{f(\lambda)}\]</span></p>
+
+<p>where <span  class="math">\(f(\lambda)\)</span> encodes data about the tangent space <span  class="math">\(T_{\lambda}\mathrm{Hilb}_{n}(\mathbb{C}^{2})\)</span> to <span  class="math">\(\mathrm{Hilb}_{n}(\mathbb{C}^{2})\)</span> at <span  class="math">\(\lambda\)</span> as a $T$-representation.</p>
+
+<p>Ellingrud-Stromme proved that</p>
+
+<p><span  class="math">\[\sum_{k,n}h_{k}(\mathrm{Hilb}_{n}(\mathbb{C}^{2}))t^{k}q^{n}=\prod_{m\ge1}\frac{1}{1-q^{m}t^{2m-2}}\]</span></p>
+
+<p>Gottsche proved that for $S$ any smooth quasiprojective surface, we have</p>
+
+<p><span  class="math">\[\sum_{k,n}h_{k}(\mathrm{Hilb}_{n}(S))t^{k}q^{n}=\prod_{\text{2 basis of }H_{0}(S)}\frac{1}{(qt^{\deg2};q^{m}t^{\alpha})_{\infty}}\]</span></p>
+
+<p>whilst noting that <span  class="math">\(S\)</span> has only even cohomology.</p>
+
+<p>The formula from the main theorem resembles Gottsche's formula with $r$ cohomology classes - some are in <span  class="math">\(h_{0}\)</span> and some are in <span  class="math">\(h_{2}\)</span>.</p>
+
+<p><span  class="math">\(G_{k/r}\)</span> is a formula for</p>
+
+<p><span  class="math">\[\sum_{n,k}h_{k}(\mathrm{Hilb}_{n}(\big[\mathbb{C}^{2}/\mathbb{Z}_{r}\big]))q^{n}t^{k}\]</span></p>
+
+<p>where <span  class="math">\(\mathbb{Z}_{r}\)</span> acts on <span  class="math">\(\mathbb{C}^{2}\)</span> linearly via <span  class="math">\(\left(\begin{array}{cc}e^{\frac{2\pi i}{r}} & 0\\0 & e^{\frac{2\pi i}{r}}\end{array}\right)\)</span>.</p>
+</div>
+  
+
+  
+  
+
+  
+
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
+        
+      
+
+    
+
+    
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    <script>const isSiteThemeDark = false;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks",
+        'slides' : "Slides"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.37431be2d92d7fb0160054761ab79602.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  <div align="center">
+    <section class="footer-social">
+  <ul class="network-icon" aria-hidden="true">
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+	<li>
+      <a itemprop="sameAs" href="https://twitter.com/edwardmpearce" target="_blank" rel="noopener">
+        <i class="fab fa-twitter big-icon"></i>
+      </a>
+	</li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+	<li>
+      <a itemprop="sameAs" href="https://www.linkedin.com/in/edwardm-pearce/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin big-icon"></i>
+      </a>
+	</li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+	<li>
+      <a itemprop="sameAs" href="https://github.com/edwardmpearce" target="_blank" rel="noopener">
+        <i class="fab fa-github big-icon"></i>
+      </a>
+	</li>
+  	
+  
+  <li>
+    <a href="https://edwardmpearce.github.io/notes/seminar_notes/partitions_hilbert_schemes/index.xml" target="_blank" title="RSS"><i class="fas fa-rss-square big-icon"></i></a>
+  </li>
+  
+  </ul>
+</section>
+  </div>
+
+  
+
+  <p class="powered-by">
+    Copyright © Edward Pearce 2021 &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

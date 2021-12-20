@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Teaching | Edward Pearce</title>
+    <link>https://edwardmpearce.github.io/teaching/</link>
+      <atom:link href="https://edwardmpearce.github.io/teaching/index.xml" rel="self" type="application/rss+xml" />
+    <description>Teaching</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Copyright © Edward Pearce 2021</copyright><lastBuildDate>Sun, 13 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://edwardmpearce.github.io/img/site-feature-image.png</url>
+      <title>Teaching</title>
+      <link>https://edwardmpearce.github.io/teaching/</link>
+    </image>
+    
+  </channel>
+</rss>

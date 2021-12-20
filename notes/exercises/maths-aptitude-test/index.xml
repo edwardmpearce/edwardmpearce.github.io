@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sample Mathematics Aptitude Test | Edward Pearce</title>
+    <link>https://edwardmpearce.github.io/notes/exercises/maths-aptitude-test/</link>
+      <atom:link href="https://edwardmpearce.github.io/notes/exercises/maths-aptitude-test/index.xml" rel="self" type="application/rss+xml" />
+    <description>Sample Mathematics Aptitude Test</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Copyright © Edward Pearce 2021</copyright><lastBuildDate>Mon, 03 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://edwardmpearce.github.io/img/site-feature-image.png</url>
+      <title>Sample Mathematics Aptitude Test</title>
+      <link>https://edwardmpearce.github.io/notes/exercises/maths-aptitude-test/</link>
+    </image>
+    
+  </channel>
+</rss>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>罗毅华</title>
+    <link>https://edwardmpearce.github.io/zh/</link>
+      <atom:link href="https://edwardmpearce.github.io/zh/index.xml" rel="self" type="application/rss+xml" />
+    <description>罗毅华</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><copyright>Copyright © Edward Pearce 2021</copyright><lastBuildDate>Fri, 27 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://edwardmpearce.github.io/img/site-feature-image.png</url>
+      <title>罗毅华</title>
+      <link>https://edwardmpearce.github.io/zh/</link>
+    </image>
+    
+  </channel>
+</rss>

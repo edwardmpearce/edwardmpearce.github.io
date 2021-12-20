@@ -1,0 +1,989 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Edward Pearce">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Notes from K3 Surfaces Reading Seminar, 30/09/2019 at The University of Sheffield">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://edwardmpearce.github.io/notes/seminar_notes/k3surfaces/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#3f51b5">
+  
+
+  
+  
+  
+  <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/solarized-dark.min.css" crossorigin="anonymous" title="hl-light">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/solarized-dark.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+      
+    
+
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+  
+
+  
+  <link rel="alternate" href="/notes/seminar_notes/k3surfaces/index.xml" type="application/rss+xml" title="Edward Pearce">
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu4912a2c2ee64ba53d4781b623d1f1db1_382516_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu4912a2c2ee64ba53d4781b623d1f1db1_382516_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="https://edwardmpearce.github.io/notes/seminar_notes/k3surfaces/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@edwardmpearce">
+  <meta property="twitter:creator" content="@edwardmpearce">
+  
+  <meta property="og:site_name" content="Edward Pearce">
+  <meta property="og:url" content="https://edwardmpearce.github.io/notes/seminar_notes/k3surfaces/">
+  <meta property="og:title" content="Introduction to K3 Surfaces | Edward Pearce">
+  <meta property="og:description" content="Notes from K3 Surfaces Reading Seminar, 30/09/2019 at The University of Sheffield"><meta property="og:image" content="https://edwardmpearce.github.io/img/site-feature-image.png">
+  <meta property="twitter:image" content="https://edwardmpearce.github.io/img/site-feature-image.png"><meta property="og:locale" content="en-us">
+  
+    <meta property="og:updated_time" content="2019-09-30T00:00:00&#43;00:00">
+  
+
+  
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Introduction to K3 Surfaces | Edward Pearce</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Edward Pearce</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Edward Pearce</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/activities/"><span>Activities</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/post/"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/teaching/"><span>Teaching</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/research/"><span>Research</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/notes/"><span>Notes</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link js-theme-selector" data-toggle="dropdown" aria-haspopup="true">
+          <i class="fas fa-palette" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+<div class="universal-wrapper pt-3">
+  <h1>Introduction to K3 Surfaces</h1>
+
+  
+
+  
+</div>
+
+
+
+<div class="universal-wrapper">
+  
+  <div class="article-style"><p>Lecture given by Evgeny Shinder, notes taken by Edward Pearce, 30/09/2019, 3pm-4:30pm at The University of Sheffield, based on Daniel Huybrechts' book <a href="http://www.math.uni-bonn.de/people/huybrech/K3Global.pdf">Lectures on K3 surfaces</a>.</p>
+
+<h2 id="calabiyau-varieties-and-canonical-classes">Calabi-Yau varieties and canonical classes</h2>
+
+<h3 id="definition-cy-variety">Definition (CY variety)</h3>
+
+<p>A (generalized) Calabi-Yau variety is a variety <span  class="math">\(X\)</span> with a non-vanishing global holomorphic top-form <span  class="math">\(\sigma\in\Omega_{X}^{n}(X)\)</span>, where <span  class="math">\(\Omega_{X}^{1}=T^{\ast}\)</span> is the cotangent bundle and <span  class="math">\(\Omega_{X}^{j}=\bigwedge^{j}\Omega_{X}^{1}\)</span>, and <span  class="math">\(n=\dim X\)</span></p>
+
+<p>More generally, for any <span  class="math">\(X\)</span>, let <span  class="math">\(\sigma\)</span> be a meromorphic top-form on <span  class="math">\(X\)</span>, and let</p>
+
+<p><span  class="math">\[\mathrm{div}(\sigma) = \sum_{D\subset X}\mathrm{ord}_{D}(\sigma)\cdot[D]\in\mathrm{Div}(X)\]</span></p>
+
+<p>Where the sum is over irreducible divisors <span  class="math">\(D\)</span> in <span  class="math">\(X\)</span>. Then <span  class="math">\(\mathrm{div}(\sigma)\)</span> is called a canonical divisor.</p>
+
+<h3 id="exercise">Exercise</h3>
+
+<p>If <span  class="math">\(\sigma'\)</span> is another form, then <span  class="math">\(\mathrm{div}(\sigma') - \mathrm{div}(\sigma)\)</span> is a principal divisor, i.e. a divisor of a meromorphic function. Hence <span  class="math">\(\mathrm{div}(\sigma)\)</span> is well-defined in <span  class="math">\(\mathrm{Pic}(X)=\mathrm{Div}(X)/\{\text{principal divisors}\}\)</span>. We write <span  class="math">\(K_{X}=\mathrm{div}(\sigma)\)</span>.</p>
+
+<p>The sheaf (or bundle) <span  class="math">\(\omega_{X}=\Omega_{X}^{n}\)</span> is called the canonical line bundle.</p>
+
+<p>In this language <span  class="math">\(X\)</span> is Calabi-Yau if and only if <span  class="math">\(K_{X}=0\in\mathrm{Pic}(X)\)</span> if and only if <span  class="math">\(\omega_{X}\cong\mathcal{O}_{X}\)</span>.</p>
+
+<h3 id="example-curves">Example: Curves</h3>
+
+<p>Let <span  class="math">\(X\)</span> be a curve and <span  class="math">\(g=g(X)\)</span> be its geometric genus. Then <span  class="math">\(\Omega_{X}^{1}=\omega_{X}\)</span>, <span  class="math">\(\Gamma(X, \Omega_{X}^{1})=\mathbb{C}^{3}\)</span>, and <span  class="math">\(\deg K_{X}=2g-2\)</span>.</p>
+
+<ul>
+<li>Fano (<span  class="math">\(g=0\)</span>), then <span  class="math">\(X=\mathbb{P}^{1}\)</span>, <span  class="math">\(\sigma=\frac{dz}{z}\)</span>. Exercise: <span  class="math">\(\mathrm{div}(\sigma)=-[0]-[\infty]\)</span> and so <span  class="math">\(\deg K_{X}=2\)</span>.</li>
+<li>Calabi-Yau (<span  class="math">\(g=1\)</span>), then <span  class="math">\(X\)</span> is an elliptic curve, <span  class="math">\(\omega_{X}=\mathcal{O}_{X}\)</span>, i.e. there exists a unique non-vanishing holomorphic 1-form (up to scaling)</li>
+<li>General type (<span  class="math">\(g\ge2\)</span>), then &quot;general-type&quot;</li>
+</ul>
+
+<h2 id="calabiyau-surfaces">Calabi-Yau Surfaces</h2>
+
+<p>There are two types of CY surfaces: abelian surfaces and K3 surfaces.</p>
+
+<ul>
+<li>For an abelian surface <span  class="math">\(A\)</span>, <span  class="math">\(\pi_{1}(A)=\mathbb{Z}^{4}\)</span>, <span  class="math">\(H^{1}(A, \mathbb{Z})=\mathbb{Z}^{4}\)</span>, <span  class="math">\(H^{1}(A, \mathcal{O}_{A})=\mathbb{C}^{4}\)</span></li>
+<li>For a K3 surface <span  class="math">\(S\)</span>, <span  class="math">\(\pi_{1}(S)=0\)</span>, <span  class="math">\(H^{1}(S, \mathbb{Z})=0\)</span>, <span  class="math">\(H^{1}(S, \mathcal{O}_{S})=0\)</span></li>
+</ul>
+
+<h3 id="definition-k3-surface">Definition (K3 Surface)</h3>
+
+<p>A K3 surface is a CY surface with <span  class="math">\(H^{1}(S, \mathbb{Z})=0\)</span> (in this setting we can replace the last condition by <span  class="math">\(\pi_{1}(S)=0\)</span> simply connected, or <span  class="math">\(H^{1}(S, \mathbb{Z})=0\)</span>.</p>
+
+<h3 id="examples-of-k3-surfaces">Examples of K3 surfaces</h3>
+
+<ul>
+<li><span  class="math">\(A=E\times E'\)</span> an abelian surface formed as the product of two elliptic curves</li>
+<li><span  class="math">\(S\subset\mathbb{P}^{3}\)</span> a quartic surface. e.g. The Fermat quartic defined by <span  class="math">\(X^{4}+Y^{4}+Z^{4}+W^{4}=0\)</span>.</li>
+</ul>
+
+<h3 id="cohomology-and-hodge-structure">Cohomology and Hodge structure</h3>
+
+<ul>
+<li>Hodge decomposition: <span  class="math">\(H^{n}(X, \mathbb{C})=\bigoplus_{p+q=m,\, p,q\ge0} H^{p, q}(X)\)</span>
+where <span  class="math">\(H^{p, q}(X)\cong H^{q}(X, \Omega_{X}^{p})\)</span>, <span  class="math">\(\overline{H^{p, q}}(X)=H^{q, p}(X)\subset H^{n}(X, \mathbb{C})\)</span></li>
+<li>Hodge numbers <span  class="math">\(h^{p, q}(X, \mathbb{C})=\dim H^{p, q}(X)\)</span></li>
+<li>Hodge diamond: Serre duality and Poincare duality imply vertical and horizontal symmetry, respectively.</li>
+</ul>
+
+<p>Horizontal rows in the bottom half describe the decomposition <span  class="math">\(H^{m}(X, \mathbb{C})=\bigoplus_{p=0}^{m} H^{p, m-p}(X)\)</span> where <span  class="math">\(m\)</span> runs from <span  class="math">\(0\)</span> to <span  class="math">\(n\)</span>.</p>
+
+<p><span  class="math">\[[[h^{n,n}],\ldots, [h^{0,n}, h^{1,n-1}, \ldots, h^{n-1,1}, h^{n,0}], \ldots, [h^{0,1}, h^{1,0}], [h^{0,0}]]\]</span></p>
+
+<h3 id="examples-of-hodge-diamonds">Examples of Hodge diamonds</h3>
+
+<p>For <span  class="math">\(X\)</span> a curve of genus <span  class="math">\(g\)</span>, the Hodge diamond is <span  class="math">\([[1], [g, g], [1]]\)</span></p>
+
+<p>For <span  class="math">\(X\)</span> a connected surface, the Hodge diamond is <span  class="math">\([[1], [q, q], [p, h, p], [q, q], [1]]\)</span> where <span  class="math">\(q=h^{1,0}\)</span> is the number of 1-forms on <span  class="math">\(X\)</span> and <span  class="math">\(p=h^{2,0}\)</span> is the number of 2-forms on <span  class="math">\(X\)</span> and <span  class="math">\(h=h^{1,1}\)</span>.</p>
+
+<p>For <span  class="math">\(A=E\times E'\)</span>, <span  class="math">\([[1],[2,2],[1,4,1],[2,2],[1]]\)</span>.</p>
+
+<p>For <span  class="math">\(S\)</span> a K3 surface, <span  class="math">\([[1],[0,0],[1,20,1],[0,0],[1]]\)</span>.</p>
+
+<p>For <span  class="math">\(X=\mathbb{P}^{2}\)</span>, <span  class="math">\([[1],[0,0],[0,1,0],[0,0],[1]]\)</span>.</p>
+
+<p>For <span  class="math">\(X=\mathbb{P}^{1}\times\mathbb{P}^{1}\)</span>, <span  class="math">\([[1],[0,0],[0,2,0],[0,0],[1]]\)</span>.</p>
+
+<p>To show that <span  class="math">\(h^{1,1}=20\)</span> for a K3 surface, we need to apply Noether's formula.</p>
+
+<h3 id="noethers-formula">Noether's formula</h3>
+
+<ul>
+<li>Holomorphic Euler characteristic: <span  class="math">\(\chi(X, \mathcal{O}_{X})=h^{0,0}-h^{0,1}+h^{0,2}=\sum(-1)^{i}h^{i}(X, \mathcal{O}_{X})\)</span></li>
+<li>Topological Euler characteristic: <span  class="math">\(\chi_{\text{top}}(X(\mathbb{C}))=\sum(-1)^{i}\dim H^{i}(X; \mathbb{Q})=c_{2}(X)\)</span></li>
+<li>Self-intersection number of the canonical divisor <span  class="math">\(K_{X}\)</span>: <span  class="math">\(K_{X}^{2}=K_{X}\cdot K_{X}\in\mathbb{Z}\)</span></li>
+<li>Noether's formula for surfaces: <span  class="math">\(12\cdot\chi(X, \mathcal{O}_{X})=K_{X}^{2}+\chi_{\text{top}}(X)\)</span></li>
+</ul>
+
+<p>For example, for <span  class="math">\(X=\mathbb{P}^{2}\)</span>, <span  class="math">\(\chi(X, \mathcal{O}_{X})=1\)</span>, <span  class="math">\(K_{X}=-3H\)</span> where <span  class="math">\(H\)</span> is the class of a line, <span  class="math">\(K_{X}^{2}=9\)</span>, and <span  class="math">\(\chi_{\text{top}}(X)=3\)</span>.</p>
+
+<p>Exercise: Show that <span  class="math">\(h^{1,1}=20\)</span> for a K3 surface.</p>
+
+<h2 id="construction-of-k3-surfaces">Construction of K3 surfaces</h2>
+
+<h3 id="computing-canonical-classes">Computing canonical classes</h3>
+
+<ul>
+<li>Fact 1: <span  class="math">\(K_{\mathbb{P}^{N}}=-(n-1)H\)</span> where <span  class="math">\(H\)</span> is a hyperplane divisor, and for <span  class="math">\(\mathbb{P}^{1}\)</span> is <span  class="math">\(\frac{dz}{z}\)</span>.</li>
+<li>Fact 2: <strong>Adjunction formula</strong> For <span  class="math">\(X\subset Y\)</span> a smooth divisor, then
+<span  class="math">\(K_{X}=(K_{Y}+X)\big|_X\,\text{or}\,\omega_{X}=\omega_{Y}(X)\big|_X\)</span> where <span  class="math">\(\omega_{Y}(X)=\omega_{Y}\bigotimes\mathcal{O}(X)\)</span></li>
+</ul>
+
+<p>Exercise: Verify the adjunction formula for <span  class="math">\(\mathbb{P}^{n-1}\subset\mathbb{P}^{n}\)</span>.</p>
+
+<h4 id="example">Example</h4>
+
+<p>For <span  class="math">\(X\subset\mathbb{P}^{2}\)</span> a degree <span  class="math">\(d\)</span> curve, <span  class="math">\(\omega_{X}=\mathcal{O}(-3-d)\)</span>.</p>
+
+<p>Exercise: Deduce the genus-degree formula <span  class="math">\(g=\frac{(d-1)(d-2)}{2}\)</span></p>
+
+<h4 id="example-1">Example</h4>
+
+<p>For <span  class="math">\(S\subset\mathbb{P}^{3}\)</span> a degree <span  class="math">\(d\)</span> surface, <span  class="math">\(\omega_{S}=\mathcal{O}(-4-d)\)</span>. Hence <span  class="math">\(S\)</span> is Calabi-Yau if and only if <span  class="math">\(d=4\)</span>, <span  class="math">\(\mathcal{O}(1)=\mathcal{O}(H)\)</span>, and <span  class="math">\(H^{1}(S, \mathcal{O}_{S})=0\)</span> by cohomology long exact sequence.</p>
+
+<p>Exercise: Classify all K3 surfaces which are complete intersections of hypersurfaces. That is, <span  class="math">\(S=H_{1}\cap\ldots\cap H_{r}\subset\mathbb{P}^{r+2}\)</span>, where <span  class="math">\(H_{i}\)</span> is a hypersurface of degree <span  class="math">\(d_{i}\)</span>. Hint: Induction on adjunction to get equations for <span  class="math">\(d_{1},\ldots,d_{r}\)</span>.</p>
+
+<h3 id="polarizations">Polarizations</h3>
+
+<p>Given <span  class="math">\(S\subset\mathbb{P}^{N}\)</span>, let <span  class="math">\(H\in\mathrm{Pic}(S)\)</span> be the hyperplane section divisor. Such an <span  class="math">\(H\)</span> is called a polarization of <span  class="math">\(S\)</span>.</p>
+
+<h4 id="example-2">Example</h4>
+
+<p>Let <span  class="math">\(S\subset\mathbb{P}^{3}\)</span> be a quartic surface, and <span  class="math">\(H\subset S\)</span> a quartic curve obtained as <span  class="math">\(H=S\cap\mathbb{P}^{2}\subset\mathbb{P}^{3}\)</span>, then <span  class="math">\(H^{2}=4\)</span>.</p>
+
+<p>More generally, a polarization is the class of an ample divisor.</p>
+
+<h4 id="example-3">Example</h4>
+
+<p>Let <span  class="math">\(S\to\mathbb{P}^{2}\)</span> be a 2-to-1 cover ramified in a degree 6 curve (sextic), then Riemann-Hurwitz formula and the vanishing of <span  class="math">\(H^{1}(S, \mathcal{O}_{S})\)</span> implies that <span  class="math">\(S\)</span> is a K3 surface, since <span  class="math">\(K_{S}=\mathcal{O}(-3)\bigotimes\mathcal{O}(\frac{6}{2})=\mathcal{O}(S)\)</span>.</p>
+
+<h2 id="k3-in-other-categories">K3 in other categories</h2>
+
+<ul>
+<li>Analytic K3 surfaces</li>
+<li>K3 surfaces over arbitrary fields</li>
+<li>Noncommutative K3 surfaces</li>
+</ul>
+
+<h3 id="definition-analytic-k3-surface">Definition (Analytic K3 surface)</h3>
+
+<p>A complex-analytic K3 surface is a compact analytic surface such that <span  class="math">\(\omega_{S}\cong\mathcal{O}_{S}\)</span> and <span  class="math">\(H^{1}(S, \mathcal{O}_{S})=0\)</span>.</p>
+
+<p>Remark: There exist many more analytic K3 surfaces than algebraic K3 surfaces.</p>
+
+<h4 id="example-4">Example</h4>
+
+<p>A complex torus <span  class="math">\(A=\mathbb{C}^{2}/\Lambda\)</span>, <span  class="math">\(\Lambda\cong\mathbb{Z}^{4}\)</span>.
+Note: most of these are not algebraic.</p>
+
+<p>Let <span  class="math">\(S'A/\pm\)</span>, i.e. quotient out 2-torsion points, that is, points (equivalence classes) for which <span  class="math">\(\bar{z}=-\bar{z}\)</span>, or equivalently <span  class="math">\(2\bar{z}=0\)</span>. This has 16 ordinary double points. Let <span  class="math">\(S\to S'\)</span> be the blow up of these ordinary double points, then <span  class="math">\(S\)</span> has <span  class="math">\(\omega_{S}=0\)</span> and <span  class="math">\(H^{1}(S, \mathcal{O}_{S})=0\)</span>, so <span  class="math">\(S\)</span> is a K3 surface.</p>
+
+<p>Hence <span  class="math">\(S\)</span> is algebraic if and only if <span  class="math">\(A\)</span> is algebraic, where <em>algebraic</em> means it can be embedded in <span  class="math">\(\mathbb{P}^{N}\)</span> for some <span  class="math">\(N\)</span>. This <span  class="math">\(S\)</span> is called a Kunicov K3 surface.</p>
+
+<h3 id="definition-k3-surface-over-an-arbitrary-field">Definition (K3 surface over an arbitrary field)</h3>
+
+<p>The same definition over an arbitrary field <span  class="math">\(k\)</span> gives K3 surfaces over <span  class="math">\(k\)</span>. Usually we will work with complex algebraic projective K3 surfaces.</p>
+
+<p>Let <span  class="math">\(\rho=\mathrm{rank}\,\mathrm{Pic}(S)\)</span> noting that <span  class="math">\(\mathrm{Pic}(S)\)</span> is a torsion-free finitely generated abelian group.</p>
+
+<ul>
+<li>For algebraic K3 surfaces over <span  class="math">\(\mathbb{C}\)</span>, <span  class="math">\(1\le\rho\le20\)</span>, where the lower bound is given by polarizations and the upper bound is given by <span  class="math">\(h^{1,1}\)</span>.</li>
+<li>For analytic K3 surfaces over <span  class="math">\(\mathbb{C}\)</span>, <span  class="math">\(0\le\rho\le20\)</span>.</li>
+<li>For algebraic K3 surfaces over characteristic <span  class="math">\(p\)</span>, <span  class="math">\(1\le\rho\le22\)</span>.</li>
+</ul>
+
+<h3 id="definition-noncommutative-k3-surfaces">Definition (Noncommutative K3 surfaces)</h3>
+
+<p>Starting from <span  class="math">\(S\)</span>, consider the bounded derived category <span  class="math">\(\mathcal{D}^{b}(S)\)</span> of <span  class="math">\(S\)</span> and the maps to:</p>
+
+<ol>
+<li>An abelian category <span  class="math">\(\mathcal{A}\)</span> which is a K3 category with <span  class="math">\(\mathcal{S}_{\mathcal{A}}=[2]\)</span> where <span  class="math">\(\mathcal{S}_{\mathcal{A}}\)</span> is the Serre functor (autoequivalence) on <span  class="math">\(\mathcal{A}\)</span> and <span  class="math">\([2]\)</span> is obtained by applying the triangulated structure autoequivalence <span  class="math">\([1]\)</span> on <span  class="math">\(\mathcal{A}\)</span> twice.</li>
+<li>The bounded derived category <span  class="math">\(\mathcal{D}^{b}(S, \beta)\)</span> where <span  class="math">\(\beta\in\mathrm{Br}(S)\)</span> is an element of the (braid? Brauer?) group(?) of <span  class="math">\(S\)</span>.</li>
+</ol>
+</div>
+  
+
+  
+  
+
+  
+
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
+        
+      
+
+    
+
+    
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    <script>const isSiteThemeDark = false;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks",
+        'slides' : "Slides"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.37431be2d92d7fb0160054761ab79602.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  <div align="center">
+    <section class="footer-social">
+  <ul class="network-icon" aria-hidden="true">
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+	<li>
+      <a itemprop="sameAs" href="https://twitter.com/edwardmpearce" target="_blank" rel="noopener">
+        <i class="fab fa-twitter big-icon"></i>
+      </a>
+	</li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+	<li>
+      <a itemprop="sameAs" href="https://www.linkedin.com/in/edwardm-pearce/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin big-icon"></i>
+      </a>
+	</li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+	<li>
+      <a itemprop="sameAs" href="https://github.com/edwardmpearce" target="_blank" rel="noopener">
+        <i class="fab fa-github big-icon"></i>
+      </a>
+	</li>
+  	
+  
+  <li>
+    <a href="https://edwardmpearce.github.io/notes/seminar_notes/k3surfaces/index.xml" target="_blank" title="RSS"><i class="fas fa-rss-square big-icon"></i></a>
+  </li>
+  
+  </ul>
+</section>
+  </div>
+
+  
+
+  <p class="powered-by">
+    Copyright © Edward Pearce 2021 &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
